@@ -4,5 +4,5 @@
 
 Robin Bird is a small and flexible machine learning library, written in C++, that
 aims to provide simple and extensible implementations of machine learning algorithms.
-Together with eIQ examples. Robin Bird allows ways for solving real world problems
-on embedded systems.
+Robin Bird along with [NXP eIQ(TM) Machine Learning Enablement](https://www.nxp.com/docs/en/nxp/user-guides/UM11226.pdf)
+allows ways for solving real world problems on embedded systems.
