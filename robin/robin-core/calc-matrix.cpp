@@ -12,7 +12,8 @@ Matrix<T>::Matrix(int height, int width)
 {
     this->height = height;
     this->width = width;
-    this->array = std::vector<std::vector<T>>(height, std::vector<T>(width));
+    this->array = std::vector<std::vector<T>>
+                        (height, std::vector<T>(width));
 }
 
 template <class T>
@@ -272,7 +273,7 @@ bool Matrix<T>::operator == (Matrix const &m)
     if (height == m.height && width == m.width) {
         for (i = 0; i < height; i++) {
             for (j = 0; j < width; j++) {
-                if(array[i][j]!=m.array[i][j]) {
+                if (array[i][j] != m.array[i][j]) {
                     return false;
                 }
             }
@@ -360,7 +361,6 @@ Matrix<T> operator - (Matrix<T> const &a, T const &b)
     Matrix<T> result = a;
     return result.subtract(b);
 }
-
 
 /* * operators */
 

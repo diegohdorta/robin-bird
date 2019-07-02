@@ -16,7 +16,7 @@ class Matrix
     public:
         Matrix<T>();        
         Matrix<T>(int height, int width);
-        Matrix<T>(std::vector<std::vector<T> > const &array);
+        Matrix<T>(std::vector<std::vector<T>> const &array);
         
         Matrix<T> add(T const &value);
         Matrix<T> add(Matrix<T> const &m) const;
@@ -31,7 +31,10 @@ class Matrix
         Matrix<T> transpose() const;
 
         Matrix<T> applyFunction(T (*function)(T)) const;
-        Matrix<T> subMatrix(int startH, int startW, int h, int w) const;
+        Matrix<T> subMatrix(int startHeight,
+                            int startWidth,
+                            int height,
+                            int width) const;
 
         int getHeight();
         int getWidth();
