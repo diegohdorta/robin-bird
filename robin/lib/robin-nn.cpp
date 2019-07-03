@@ -1,20 +1,18 @@
 /* Copyright (c) 2019 NXP Semiconductors
- *
+ *   
  * SPDX-License-Identifier: GPL3
  * Diego Dorta <diego.dorta@nxp.com>
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or 2 any later version.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU General Public License along with
+ * this program. If not, see <https://www.gnu.org/licenses/>.
  */
 #include "robin-nn.h"
 
@@ -122,7 +120,8 @@ void RobinBird::learn(std::vector<double> expectedOutput)
     /* error equals to:
      * E = 1/2  (expected - computed)^2
      * 
-     * Then, calculate the partial derivative of E with respect to W and B.
+     * Then, calculate the partial derivative of E
+     * with respect to W and B.
      */
     Y = Matrix<double>({expectedOutput});
 
@@ -196,7 +195,7 @@ void RobinBird::saveRobinBirdModel(const char *fileModelPath)
 
 double RobinBird::random(double x)
 {
-    return (double)(rand() % 10000 + 1)/10000-0.5;
+    return (double)(rand() % 10000 + 1) / 10000 - 0.5;
 }
 
 double RobinBird::sigmoid(double x)
