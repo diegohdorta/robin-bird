@@ -1,9 +1,6 @@
+project(robin)
 cmake_minimum_required(VERSION 3.9)
-project(robin-bird VERSION 1.0.0 DESCRIPTION "Robin Bird")
+set(PROJECT_DESCRIPTION "experimental, small and flexible C++ machine learning library")
+message(STATUS "Running CMake for ${PROJECT_NAME} (${PROJECT_DESCRIPTION})")
 
-# Compile the Robin Bird library
 add_subdirectory(robin)
-
-# Compile all the examples
-add_subdirectory(examples)
-
