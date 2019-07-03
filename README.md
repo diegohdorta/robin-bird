@@ -14,6 +14,7 @@ commands:
 ```bash
 $ gem install bundler
 $ bundle install
+$ cd docs/
 $ bundle exec rake build
 ```
 To open use `evince` or `Firefox` browser to read the Getting Started Document:
