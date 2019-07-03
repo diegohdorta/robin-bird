@@ -1,23 +1,21 @@
 /* Copyright (c) 2019 NXP Semiconductors
- *
+ *   
  * SPDX-License-Identifier: GPL3
  * Diego Dorta <diego.dorta@nxp.com>
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or 2 any later version.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU General Public License along with
+ * this program. If not, see <https://www.gnu.org/licenses/>.
  */
-#ifndef CALC_MATRIX_H
-#define CALC_MATRIX_H
+#ifndef MATH_H
+#define MATH_H
 
 #include <assert.h>
 #include <iostream>
@@ -52,7 +50,7 @@ class Matrix
 
         int getHeight();
         int getWidth();
-
+        
         void fill(T const &value);
         void put(int h, int w, T const &value);
         T get(int h, int w) const;
@@ -75,7 +73,7 @@ class Matrix
         std::vector<std::vector<T>> array;
 };
 
-/* Include functions */
-#include "calc-matrix.cpp"
+/* Include functions - modular */
+#include "math.cpp"
 
-#endif /* CALC_MATRIX_H defined */
+#endif /* MATH_H defined */
