@@ -1,0 +1,15 @@
+# Rakefile for converting .adoc to .pdf and .html files
+# https://asciidoctor.org/docs/asciidoctor-pdf/
+namespace :build do
+  task :pdf do
+    `bundle exec asciidoctor-pdf robinbird.adoc -o pdf/robinbird.pdf`
+    puts ">> PDF >> file was generated in: pdf/ folder."
+  end
+  task :html do
+    `bundle exec asciidoctor robinbird.adoc -o html/robinbird.html`
+    puts ">> HTML >> file was generated in: html/ folder."
+  end
+end
+
+desc 'Build all default formats'
+task :build => [ "build:html", "build:pdf" ]
