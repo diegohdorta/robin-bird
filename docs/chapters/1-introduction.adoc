@@ -1,0 +1,69 @@
+[[introduction]]
+
+== INTRODUCTION
+
+=== Artificial Intelligence and Machine Learning
+
+==== Overview
+
+Machine Learning make our minds probably deliberate about robots and
+talking machines, some of us might even related Machine Learning to advanced
+robots bent on destroying the world. Although this could actually happens in the
+future, for the time being this technology is more about building intelligent
+systems with decision making abilities.
+
+Think about Machine Learning as a sub-field of Artificial Intelligence that
+can analyze large amounts of data and automate analytical model buildings. This
+branch of AI was born from pattern recognition and the theory that computer can
+learn, and having the ability to independently draw knowledge from experience.
+
+==== Historically
+
+All the programs related to AI typically excelled at just on feature, like the
+Deep Blue computer, that could play chess in a high level championship but
+that's all it could do. Presently, large data centers and huge storage capacities
+make things, that were believed for years to be distant concepts, possible.
+
+To write a program to play the Tic-Ta-Toe would required all the
+instructions, even this is not impossible, the problem starts when it goes from a
+few possibilities from TTT game to for example chess that has an average of 35
+possible possibilities for each move, the rules gets bigger, and as deeper it dives
+into the problem, more messy it gets and the written rules starts to break down.
+
+The program and all its covers for each possibility becomes, almost
+impossible, or worse, impracticable. The rules does not need to be written by an
+human, with the right instructions the computer can learn create its own
+programs.
+
+==== Presently
+
+Even ML existing solely as software, most cases requires the use of
+hardware components to build intelligent machines. Having a basic form, ML
+combined with embedded systems can reach significant improvements in image
+and video recognition, and the reason is due a certain level of smartness that
+embedded systems reach over the last years.
+
+This also explains the cause it has been gaining space and moment in
+several types of industrial processes nowadays. Driving cars were made only by
+humans at least until a few years ago. The computer learning and its advance are
+making improvements over the last decade, where autonomous car and talking
+driver assistants are already in test.
+
+==== Coding
+
+This field boils down on spending time to write many lines of code, that
+eventually solve a problem by applying some type of intelligent algorithm. For
+instance, some smart houses have lighting systems which automatically turn on
+and off based on whether anyone is present in the room. This idea does not
+amuse, but thinking about this, it realizes that the system is actually making
+decision on its own.
+
+==== Algorithm
+
+The much-needed algorithms required for real-time image and video
+recognition are being developed and will get it all quickly. Not just that, several
+types of algorithms for different issues are being created every day and
+embedded systems is fully prepared to completely embrace this technology
+replacing the work of an human being.
+
+<<<

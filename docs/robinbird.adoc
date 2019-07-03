@@ -1,0 +1,11 @@
+= Robin Bird Library 
+experimental, small and flexible C++ machine learning library for embedded systems
+v1.0, Jul 23, 2019
+:source-highlighter: coderay
+:toc: left
+:toclevels: 5
+
+include::chapters/0-abstract.adoc[]
+include::chapters/1-introduction.adoc[]
+include::chapters/2-installation.adoc[]
+include::chapters/3-robinbird-overview.adoc[]

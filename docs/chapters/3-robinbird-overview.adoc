@@ -1,0 +1,31 @@
+[[robinbird-overview]]
+
+=== Robin Bird
+
+==== Overview
+
+Machine Learning is the study of algorithms that learn from examples and
+experiences instead of relying on hard-coded rules. Robin Bird comes for solving
+real world problems using only math and object-oriented programming language,
+including an easy extensible implementation of its oriented classes for enthusiast
+developers.
+
+For instance, think about the following situation where is required to write
+a code to recognizer two types of fruit, or cars, or animals. This is absolutely
+impossible without Machine Learning. Robin Bird can make predictions based on
+a huge amount of data, just by recognizing aspects and relations.
+
+==== Classification
+
+Problems like image, speech and character recognition belongs to a
+category that is called Classification problems, which a certain given input, the
+machine should be able to select a category where it belongs and labeled.
+
+==== Robin Bird Release
+
+This Robin Bird release includes algorithms for recognition problems, it can
+be integrated with machine learning solutions from low to medium-scale.
+
+===== Getting Started with Robin Bird Library
+
+to be continued

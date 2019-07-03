@@ -1,0 +1,65 @@
+[[installation]]
+
+=== GETTING STARTED
+
+[NOTE]
+====
+This entire doc was tested on `GNU/Linux Ubuntu 18.04`.
+====
+
+==== Prerequisites Packages
+
+* https://www.gtkmm.org/en/[gtkmm - C++ Interfaces for GTK+ and GNOME]
+* http://www.libpng.org/pub/png/libpng.html[libpng - C functions for handling PNG images]
+
+===== Installing Packages
+
+On GNU/Linux Ubuntu, install the following requirements:
+
+[source,bash]
+----
+$ apt-get install g++ libgtkmm-3.0-dev libpng++-dev
+----
+
+==== Robin Bird Source Code
+
+Get `Robin Bird` source code `experimental` release:
+
+[source,bash]
+----
+$ git clone https://gitlab.com/robinbird/robin-bird.git
+$ cd robin-bird-library/
+$ git checkout robin-bird-library-experimental_v1.0.0
+----
+
+==== Robin Bird Cmake
+
+* For developers using x86 as a platform developing:
+
+[source,bash]
+----
+$ mkdir build
+$ cd build
+----
+
+* For compiling Robin Bird with examples:
+
+[source,bash]
+----
+$ cmake .. -DINSTURMENT_FOR_FUZZING=ON
+$ make
+$ make install
+----
+
+* For generating a full
+https://www.nxp.com/support/developer-resources/software-center/eiq-ml-development-environment:EIQ[eIQ]
+image for _i.MX8 Arm 64_ boards, start by using the
+https://www.nxp.com/docs/en/nxp/user-guides/UM11226.pdf[NXP eIQ(TM) Machine Learning Enablement]
+for setting up the Yocto accordingly. Then:
+
+[source,bash]
+----
+$ cp -a meta-robinbird fsl-community-bsp/sources
+$ bitbake robin-bird
+----
+<<<
