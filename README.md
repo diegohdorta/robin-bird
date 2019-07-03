@@ -16,13 +16,14 @@ $ gem install bundler
 $ bundle install
 $ bundle exec rake build
 ```
-Open use `evince`:
+To open use `evince` or `Firefox` browser to read the Getting Started Document:
+
+* PDF
 
 ```bash
 $ evince pdf/robinbird.pdf
 ```
-
-Or use `Firefox` browser to read the Getting Started Document:
+* HTML
 
 ```bash
 $ firefox html/robinbird/.html
