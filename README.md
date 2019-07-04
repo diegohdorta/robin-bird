@@ -8,7 +8,7 @@ Robin Bird along with
 [NXP eIQ(TM) Machine Learning Enablement](https://www.nxp.com/docs/en/nxp/user-guides/UM11226.pdf)
 allows ways for solving real world problems on embedded systems.
 
-Before starting with `Robin Bird`, generate the documentation using the following
+Before starting with `Robin Bird`, generate the documentation [^1]  using the following
 commands:
 
 ```bash
@@ -33,3 +33,5 @@ $ firefox html/robinbird/.html
 # Maintainer
 
 * Diego Dorta <diego.dorta@nxp.com>
+
+[^1]: For more information about [Asciidoctor](https://asciidoctor.org/).
