@@ -22,8 +22,6 @@ web browser to read the documentation as follows:
 
 ```bash
 $ evince pdf/robinbird.pdf
-```
-```bash
 $ firefox html/robinbird/.html
 ```
 
