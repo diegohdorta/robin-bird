@@ -24,7 +24,8 @@ web browser to read the documentation as follows:
 $ evince pdf/robinbird.pdf
 ```
 ```bash
-$ firefox html/robinbird/.html```
+$ firefox html/robinbird/.html
+```
 
 # Maintainer
 
