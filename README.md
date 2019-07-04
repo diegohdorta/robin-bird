@@ -17,7 +17,6 @@ $ bundle install
 $ cd docs/
 $ bundle exec rake build
 ```
-
 The guides are saved in `docs/pdf` and `docs/html`, use any PDF reader tool or a
 web browser to read the documentation as follows:
 
