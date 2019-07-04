@@ -18,16 +18,14 @@ $ cd docs/
 $ bundle exec rake build
 ```
 
-Use `evince` or `Firefox` browser to read the `Getting Started` document:
+The guides are saved in `docs/pdf` and `docs/html`, use any PDF reader tool or a
+web browser to read the documentation as follows:
 
-* PDF
 ```bash
 $ evince pdf/robinbird.pdf
 ```
-* HTML
 ```bash
-$ firefox html/robinbird/.html
-```
+$ firefox html/robinbird/.html```
 
 # Maintainer
 
