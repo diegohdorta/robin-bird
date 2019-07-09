@@ -57,6 +57,6 @@ class RobinBird
         void writetoFile(Matrix<double> &m, std::ofstream &file);
 };
 
-#include "robin-nn.cpp"
+//#include "robin-nn.cpp"
 
 #endif /* ROBIN_NN_H_ */
