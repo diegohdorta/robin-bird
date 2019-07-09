@@ -68,6 +68,6 @@ static double step(double x)
     return x;
 }
 
-#include "hwd.cpp"
+//#include "hwd.cpp"
 
 #endif /* HWD_H defined */

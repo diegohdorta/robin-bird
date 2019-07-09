@@ -23,7 +23,6 @@
 #include "robin-nn.h"
 #include "hwd.h"
 
-
 void HandwrittenDigit::runInferenceSingleImage(std::vector<double> img)
 {
     std::cout << this->net.computeOutput(img).applyFunction(step);
