@@ -10,6 +10,6 @@
 
 std::vector<double> readImage(const char *filename);
 
-#include "robin-image.cpp"
+//#include "robin-image.cpp"
 
 #endif /* IMAGE_H defined */
