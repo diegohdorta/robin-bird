@@ -16,6 +16,7 @@ file(COPY ${CMAKE_SOURCE_DIR}/robin/models/hwd-digits-test.rb
 
 include_directories("../../../lib/")
 
-file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/*.cpp" ../../robin/robin-nn/*.cpp)
+file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/*.cpp" )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
+#target_link_libraries(${PROJECT_NAME} ${ROBIN_COMMON_LIBS})

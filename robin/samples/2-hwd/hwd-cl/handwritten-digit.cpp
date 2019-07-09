@@ -14,8 +14,8 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <https://www.gnu.org/licenses/>.
  */
-#include "robin-nn.h"
-#include "hwd.h"
+#include "robin/robin-nn.h"
+#include "robin/hwd.h"
                          
 int main(int argc, char *argv[])
 {
