@@ -10,6 +10,10 @@ set(ROBIN_COMMON_LIBS -Wl,-force_load robin-static)
 set(ROBIN_COMMON_LIBS -Wl,-whole-archive robin-static -Wl,-no-whole-archive)
 include_directories(robin/lib)
 
+if (INSTURMENT_FOR_FUZZING)
+	add_subdirectory(fuzz)
+endif ()
+
 find_program(CCACHE ccache)
 if (CCACHE)
        message(STATUS "Using ccache from ${CCACHE}")
