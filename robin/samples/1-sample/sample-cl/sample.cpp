@@ -17,7 +17,7 @@
 #include <iostream>
 #include <time.h>
 
-#include "math.h"
+#include "robin/math.h"
 
 static double random(double x);
 
