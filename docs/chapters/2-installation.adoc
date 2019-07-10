@@ -42,12 +42,24 @@ $ mkdir build
 $ cd build
 ----
 
-* For compiling Robin Bird with examples:
+===== Compilation Flags
+
+* -DROBIN_BIRD, enables `Robin Bird` library.
+* -DSAMPLES, enables `Robin Bird` samples.
+* -DINSTURMENT_FOR_FUZZING, enables https://en.wikipedia.org/wiki/Fuzzing[fuzzing] tests.
+
+* For a normal `Robin Bird` installation:
 
 [source,bash]
 ----
-$ cmake .. -DINSTURMENT_FOR_FUZZING=ON
+$ cmake .. -DROBIN_BIRD=ON -DSAMPLES=ON -DINSTURMENT_FOR_FUZZING=ON
 $ make
+----
+
+Use `root provilegies` for the next steps:
+
+[source,bash]
+----
 $ make install
 $ ldconfig
 ----
