@@ -49,6 +49,7 @@ $ cd build
 $ cmake .. -DINSTURMENT_FOR_FUZZING=ON
 $ make
 $ make install
+$ ldconfig
 ----
 
 * For generating a full
