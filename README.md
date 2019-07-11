@@ -20,6 +20,8 @@ $ bundle install
 $ bundle exec rake build
 ```
 
+Read the documentation online on [therobinbird.org](https://diegohdorta.github.io/robin-bird-page/).
+
 ## Reading
 
 The guides are saved in `docs/pdf` and `docs/html` folders. Use any PDF reader
