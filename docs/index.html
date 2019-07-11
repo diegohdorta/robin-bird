@@ -542,6 +542,12 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_presently">Presently</a></li>
 <li><a href="#_coding">Coding</a></li>
 <li><a href="#_algorithm">Algorithm</a></li>
+<li><a href="#_robin_bird">Robin Bird</a>
+<ul class="sectlevel4">
+<li><a href="#_classification">Classification</a></li>
+</ul>
+</li>
+<li><a href="#_robin_bird_release">Robin Bird Release</a></li>
 </ul>
 </li>
 <li><a href="#installation">GETTING STARTED</a>
@@ -557,15 +563,9 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_embedded_system_compilation">Embedded System Compilation</a></li>
 </ul>
 </li>
-<li><a href="#robinbird-overview">Robin Bird</a>
+<li><a href="#robinbird-overview">Robin Bird Overview</a>
 <ul class="sectlevel3">
-<li><a href="#_overview_2">Overview</a></li>
-<li><a href="#_classification">Classification</a></li>
-<li><a href="#_robin_bird_release">Robin Bird Release</a>
-<ul class="sectlevel4">
-<li><a href="#_getting_started_with_robin_bird_library">Getting Started with Robin Bird Library</a></li>
-</ul>
-</li>
+<li><a href="#_sample">Sample</a></li>
 </ul>
 </li>
 </ul>
@@ -665,6 +665,44 @@ recognition are being developed and will get it all quickly. Not just that, seve
 types of algorithms for different issues are being created every day and
 embedded systems is fully prepared to completely embrace this technology
 replacing the work of an human being.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_robin_bird">Robin Bird</h4>
+<div class="paragraph">
+<p>Machine Learning is the study of algorithms that learn from examples and
+experiences instead of relying on hard-coded rules. Robin Bird comes for solving
+real world problems using only math and object-oriented programming language,
+including an easy extensible implementation of its oriented classes for enthusiast
+developers.</p>
+</div>
+<div class="paragraph">
+<p>For instance, think about the following situation where is required to write
+a code to recognizer two types of fruit, or cars, or animals. This is absolutely
+impossible without Machine Learning. Robin Bird can make predictions based on
+a huge amount of data, just by recognizing aspects and relations.</p>
+</div>
+<div class="sect4">
+<h5 id="_classification">Classification</h5>
+<div class="paragraph">
+<p>Problems like image, speech and character recognition belongs to a
+category that is called Classification problems, which a certain given input, the
+machine should be able to select a category where it belongs and labeled.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_robin_bird_release">Robin Bird Release</h4>
+<div class="paragraph">
+<p>This Robin Bird release includes algorithms for recognition problems, it can
+be integrated with machine learning solutions from low to medium-scale.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Robin Bird Beta Release v1.0.0</p>
+</li>
+</ul>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -800,41 +838,94 @@ $ ldconfig</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="robinbird-overview">Robin Bird</h3>
-<div class="sect3">
-<h4 id="_overview_2">Overview</h4>
+<h3 id="robinbird-overview">Robin Bird Overview</h3>
 <div class="paragraph">
-<p>Machine Learning is the study of algorithms that learn from examples and
-experiences instead of relying on hard-coded rules. Robin Bird comes for solving
-real world problems using only math and object-oriented programming language,
-including an easy extensible implementation of its oriented classes for enthusiast
-developers.</p>
+<p>Check if <code>Robin Bird</code> is installed by:</p>
 </div>
-<div class="paragraph">
-<p>For instance, think about the following situation where is required to write
-a code to recognizer two types of fruit, or cars, or animals. This is absolutely
-impossible without Machine Learning. Robin Bird can make predictions based on
-a huge amount of data, just by recognizing aspects and relations.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">$ pkg-config robin --libs</code></pre>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_classification">Classification</h4>
 <div class="paragraph">
-<p>Problems like image, speech and character recognition belongs to a
-category that is called Classification problems, which a certain given input, the
-machine should be able to select a category where it belongs and labeled.</p>
+<p>The output must be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">$ -L/usr/local/lib -lrobin</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_robin_bird_release">Robin Bird Release</h4>
+<h4 id="_sample">Sample</h4>
 <div class="paragraph">
-<p>This Robin Bird release includes algorithms for recognition problems, it can
-be integrated with machine learning solutions from low to medium-scale.</p>
+<p>Create a simple <code>.cpp</code> file and import the library:</p>
 </div>
-<div class="sect4">
-<h5 id="_getting_started_with_robin_bird_library">Getting Started with Robin Bird Library</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;chrono&gt;</span>
+<span class="preprocessor">#include</span> <span class="include">&lt;iostream&gt;</span>
+<span class="preprocessor">#include</span> <span class="include">&lt;time.h&gt;</span>
+
+<span class="preprocessor">#include</span> <span class="include">&quot;robin/robin-nn.h&quot;</span>
+
+<span class="directive">static</span> <span class="predefined-type">double</span> random(<span class="predefined-type">double</span> x);
+
+<span class="predefined-type">int</span> main(<span class="directive">void</span>)
+{
+    <span class="directive">auto</span> start = std::chrono::system_clock::now();
+    <span class="directive">auto</span> end = std::chrono::system_clock::now();
+    std::chrono::duration&lt;<span class="predefined-type">double</span>&gt; elapsed_seconds = end - start;
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Start at </span><span class="delimiter">&quot;</span></span> &lt;&lt; std::ctime(&amp;end_time) &lt;&lt; std::endl;
+
+    start = std::chrono::system_clock::now();
+
+    srand(time(<span class="predefined-constant">NULL</span>));
+    Matrix &lt;<span class="predefined-type">double</span>&gt; A(<span class="integer">3</span>, <span class="integer">3</span>), B(<span class="integer">3</span>, <span class="integer">3</span>);
+
+    A = A.applyFunction(random);
+    B = B.applyFunction(random);
+
+    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A:</span><span class="char">\n</span><span class="delimiter">&quot;</span></span> &lt;&lt; A &lt;&lt; std::endl;
+    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix B:</span><span class="char">\n</span><span class="delimiter">&quot;</span></span> &lt;&lt; B &lt;&lt; std::endl;
+
+    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A + B:</span><span class="char">\n</span><span class="delimiter">&quot;</span></span> &lt;&lt; A + B &lt;&lt; std::endl;
+    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A * B:</span><span class="char">\n</span><span class="delimiter">&quot;</span></span> &lt;&lt; A.dot(B) &lt;&lt; std::endl;
+
+    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A(0,0): </span><span class="delimiter">&quot;</span></span>&lt;&lt; A(<span class="integer">0</span>,<span class="integer">0</span>) &lt;&lt; std::endl;
+    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A(2,2): </span><span class="delimiter">&quot;</span></span>&lt;&lt; A(<span class="integer">2</span>,<span class="integer">2</span>) &lt;&lt; std::endl;
+
+    end = std::chrono::system_clock::now();
+    elapsed_seconds = end - start;
+    end_time = std::chrono::system_clock::to_time_t(end);
+    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="char">\n</span><span class="content">Ended at </span><span class="delimiter">&quot;</span></span>
+              &lt;&lt; std::ctime(&amp;end_time)
+              &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Training time: </span><span class="delimiter">&quot;</span></span> &lt;&lt; elapsed_seconds.count()
+              &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span> &lt;&lt; std::endl;
+
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}
+
+<span class="directive">static</span> <span class="predefined-type">double</span> random(<span class="predefined-type">double</span> x)
+{
+    <span class="keyword">return</span> (<span class="predefined-type">double</span>)(rand() % <span class="integer">10000</span> + <span class="integer">1</span>)/<span class="integer">10000</span>;
+}</code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>to be continued</p>
+<p>Compile it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">$ g++ sample.cpp `pkg-config robin --libs --cflags`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run the example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">$ ./a.out</code></pre>
 </div>
 </div>
 </div>

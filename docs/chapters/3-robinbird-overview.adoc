@@ -1,31 +1,87 @@
 [[robinbird-overview]]
 
-=== Robin Bird
+=== Robin Bird Overview
 
-==== Overview
+Check if `Robin Bird` is installed by:
 
-Machine Learning is the study of algorithms that learn from examples and
-experiences instead of relying on hard-coded rules. Robin Bird comes for solving
-real world problems using only math and object-oriented programming language,
-including an easy extensible implementation of its oriented classes for enthusiast
-developers.
+[source,bash]
+----
+$ pkg-config robin --libs
+----
 
-For instance, think about the following situation where is required to write
-a code to recognizer two types of fruit, or cars, or animals. This is absolutely
-impossible without Machine Learning. Robin Bird can make predictions based on
-a huge amount of data, just by recognizing aspects and relations.
+The output must be:
 
-==== Classification
+[source,bash]
+----
+$ -L/usr/local/lib -lrobin
+----
 
-Problems like image, speech and character recognition belongs to a
-category that is called Classification problems, which a certain given input, the
-machine should be able to select a category where it belongs and labeled.
+==== Sample
 
-==== Robin Bird Release
+Create a simple `.cpp` file and import the library:
 
-This Robin Bird release includes algorithms for recognition problems, it can
-be integrated with machine learning solutions from low to medium-scale.
+[source,c]
+----
+#include <chrono>
+#include <iostream>
+#include <time.h>
 
-===== Getting Started with Robin Bird Library
+#include "robin/robin-nn.h"
 
-to be continued
+static double random(double x);
+
+int main(void)
+{
+    auto start = std::chrono::system_clock::now();
+    auto end = std::chrono::system_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+    std::cout << "Start at " << std::ctime(&end_time) << std::endl;
+    
+    start = std::chrono::system_clock::now(); 
+
+    srand(time(NULL));
+    Matrix <double> A(3, 3), B(3, 3);
+
+    A = A.applyFunction(random);
+    B = B.applyFunction(random);
+
+    std::cout << "Matrix A:\n" << A << std::endl;
+    std::cout << "Matrix B:\n" << B << std::endl;
+
+    std::cout << "Matrix A + B:\n" << A + B << std::endl;
+    std::cout << "Matrix A * B:\n" << A.dot(B) << std::endl;
+    
+    std::cout << "Matrix A(0,0): "<< A(0,0) << std::endl;
+    std::cout << "Matrix A(2,2): "<< A(2,2) << std::endl;
+    
+    end = std::chrono::system_clock::now();    
+    elapsed_seconds = end - start;
+    end_time = std::chrono::system_clock::to_time_t(end);
+    std::cout << "\n\nEnded at "
+              << std::ctime(&end_time)
+              << "Training time: " << elapsed_seconds.count()
+              << "s" << std::endl;
+    
+    return 0;
+}
+
+static double random(double x)
+{
+    return (double)(rand() % 10000 + 1)/10000;
+}
+----
+
+Compile it:
+
+[source,bash]
+----
+$ g++ sample.cpp `pkg-config robin --libs --cflags`
+----
+
+Run the example:
+
+[source,bash]
+----
+$ ./a.out
+----
