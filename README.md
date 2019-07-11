@@ -12,7 +12,7 @@ allows ways for solving real world problems on embedded systems.
 
 Use the next commands to generate a full `Robin Bird` guide before diving into
 the library. This documentation<sup>1</sup> can provide a complete understanding
-of the library:
+of the entire application programming interface, functions and binaries:
 ```bash
 $ gem install bundler
 $ cd docs/
