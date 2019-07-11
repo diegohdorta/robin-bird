@@ -2,39 +2,50 @@
 
 === GETTING STARTED
 
-[NOTE]
-====
-This entire doc was tested on `GNU/Linux Ubuntu 18.04`.
-====
+This library and documentation are totally experimental, providing no warranty
+of a full functionatlly during these beta releases. The next steps were
+tested under the `GNU/Linux Ubuntu 18.04` version.
 
 ==== Prerequisites Packages
+
+Robin Bird requires a few dependencies as well as a graphical interfaces library
+and library for image manipulation. This list of dependencies may increase over time:
 
 * https://www.gtkmm.org/en/[gtkmm - C++ Interfaces for GTK+ and GNOME]
 * http://www.libpng.org/pub/png/libpng.html[libpng - C functions for handling PNG images]
 
 ===== Installing Packages
 
-On GNU/Linux Ubuntu, install the following requirements:
+These steps are required for using `Robin Bird` in a local machine for a quickly
+developing and debugging work of the library. On `x86` platform, install the
+following requirements:
 
 [source,bash]
 ----
 $ apt-get install g++ libgtkmm-3.0-dev libpng++-dev
 ----
 
-==== Robin Bird Source Code
+===== Robin Bird Source Code
 
-Get `Robin Bird` source code `experimental` release:
+Get `Robin Bird` source code `beta` release:
 
 [source,bash]
 ----
-$ git clone https://gitlab.com/robinbird/robin-bird.git
-$ cd robin-bird-library/
-$ git checkout robin-bird-library-experimental_v1.0.0
+$ git clone https://github.com/diegohdorta/robin-bird.git
+$ cd robin-bird/
 ----
 
-==== Robin Bird Cmake
+Checkout the `robin-bird-beta_v1.0.0` release as follows:
 
-* For developers using x86 as a platform developing:
+[source,bash]
+----
+$ git checkout robin-bird-beta_v1.0.0
+----
+
+===== Robin Bird Cmake
+
+Robin Bird uses https://cmake.org/[cmake] for a easy compilation and maintenance.
+Create a build project directory, where the binaries are placed after compiling:
 
 [source,bash]
 ----
@@ -44,11 +55,14 @@ $ cd build
 
 ===== Compilation Flags
 
+Use the following flags for including fuzzing, samples and the lib to the
+`Unix Makefile` generate by cmake:
+
 * -DROBIN_BIRD, enables `Robin Bird` library.
 * -DSAMPLES, enables `Robin Bird` samples.
-* -DINSTURMENT_FOR_FUZZING, enables https://en.wikipedia.org/wiki/Fuzzing[fuzzing] tests.
+* -DINSTURMENT_FOR_FUZZING, enables fuzzing tests.
 
-* For a normal `Robin Bird` installation:
+For a normal `Robin Bird` installation:
 
 [source,bash]
 ----
@@ -56,7 +70,12 @@ $ cmake .. -DROBIN_BIRD=ON -DSAMPLES=ON -DINSTURMENT_FOR_FUZZING=ON
 $ make
 ----
 
-Use `root provilegies` for the next steps:
+Install the binaries and dynamic link the `Robin Bird`:
+
+[NOTE]
+====
+It may need to use `root provilegies`
+====
 
 [source,bash]
 ----
@@ -64,15 +83,8 @@ $ make install
 $ ldconfig
 ----
 
-* For generating a full
-https://www.nxp.com/support/developer-resources/software-center/eiq-ml-development-environment:EIQ[eIQ]
-image for _i.MX8 Arm 64_ boards, start by using the
-https://www.nxp.com/docs/en/nxp/user-guides/UM11226.pdf[NXP eIQ(TM) Machine Learning Enablement]
-for setting up the Yocto accordingly. Then:
+==== Embedded System Compilation
 
-[source,bash]
-----
-$ cp -a meta-robinbird fsl-community-bsp/sources
-$ bitbake robin-bird
-----
+(to be continued)
+
 <<<

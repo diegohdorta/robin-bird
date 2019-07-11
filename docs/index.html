@@ -549,14 +549,12 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_prerequisites_packages">Prerequisites Packages</a>
 <ul class="sectlevel4">
 <li><a href="#_installing_packages">Installing Packages</a></li>
-</ul>
-</li>
 <li><a href="#_robin_bird_source_code">Robin Bird Source Code</a></li>
-<li><a href="#_robin_bird_cmake">Robin Bird Cmake</a>
-<ul class="sectlevel4">
+<li><a href="#_robin_bird_cmake">Robin Bird Cmake</a></li>
 <li><a href="#_compilation_flags">Compilation Flags</a></li>
 </ul>
 </li>
+<li><a href="#_embedded_system_compilation">Embedded System Compilation</a></li>
 </ul>
 </li>
 <li><a href="#robinbird-overview">Robin Bird</a>
@@ -673,22 +671,17 @@ replacing the work of an human being.</p>
 </div>
 <div class="sect2">
 <h3 id="installation">GETTING STARTED</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>This entire doc was tested on <code>GNU/Linux Ubuntu 18.04</code>.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>This library and documentation are totally experimental, providing no warranty
+of a full functionatlly during these beta releases. The next steps were
+tested under the <code>GNU/Linux Ubuntu 18.04</code> version.</p>
 </div>
 <div class="sect3">
 <h4 id="_prerequisites_packages">Prerequisites Packages</h4>
+<div class="paragraph">
+<p>Robin Bird requires a few dependencies as well as a graphical interfaces library
+and library for image manipulation. This list of dependencies may increase over time:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -702,7 +695,9 @@ replacing the work of an human being.</p>
 <div class="sect4">
 <h5 id="_installing_packages">Installing Packages</h5>
 <div class="paragraph">
-<p>On GNU/Linux Ubuntu, install the following requirements:</p>
+<p>These steps are required for using <code>Robin Bird</code> in a local machine for a quickly
+developing and debugging work of the library. On <code>x86</code> platform, install the
+following requirements:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -710,28 +705,31 @@ replacing the work of an human being.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_robin_bird_source_code">Robin Bird Source Code</h4>
+<div class="sect4">
+<h5 id="_robin_bird_source_code">Robin Bird Source Code</h5>
 <div class="paragraph">
-<p>Get <code>Robin Bird</code> source code <code>experimental</code> release:</p>
+<p>Get <code>Robin Bird</code> source code <code>beta</code> release:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">$ git clone https://gitlab.com/robinbird/robin-bird.git
-$ cd robin-bird-library/
-$ git checkout robin-bird-library-experimental_v1.0.0</code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">$ git clone https://github.com/diegohdorta/robin-bird.git
+$ cd robin-bird/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Checkout the <code>robin-bird-beta_v1.0.0</code> release as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">$ git checkout robin-bird-beta_v1.0.0</code></pre>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_robin_bird_cmake">Robin Bird Cmake</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>For developers using x86 as a platform developing:</p>
-</li>
-</ul>
+<div class="sect4">
+<h5 id="_robin_bird_cmake">Robin Bird Cmake</h5>
+<div class="paragraph">
+<p>Robin Bird uses <a href="https://cmake.org/">cmake</a> for a easy compilation and maintenance.
+Create a build project directory, where the binaries are placed after compiling:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -739,8 +737,13 @@ $ git checkout robin-bird-library-experimental_v1.0.0</code></pre>
 $ cd build</code></pre>
 </div>
 </div>
+</div>
 <div class="sect4">
 <h5 id="_compilation_flags">Compilation Flags</h5>
+<div class="paragraph">
+<p>Use the following flags for including fuzzing, samples and the lib to the
+<code>Unix Makefile</code> generate by cmake:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -750,12 +753,12 @@ $ cd build</code></pre>
 <p>-DSAMPLES, enables <code>Robin Bird</code> samples.</p>
 </li>
 <li>
-<p>-DINSTURMENT_FOR_FUZZING, enables <a href="https://en.wikipedia.org/wiki/Fuzzing">fuzzing</a> tests.</p>
-</li>
-<li>
-<p>For a normal <code>Robin Bird</code> installation:</p>
+<p>-DINSTURMENT_FOR_FUZZING, enables fuzzing tests.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>For a normal <code>Robin Bird</code> installation:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -764,7 +767,21 @@ $ make</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Use <code>root provilegies</code> for the next steps:</p>
+<p>Install the binaries and dynamic link the <code>Robin Bird</code>:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It may need to use <code>root provilegies</code></p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -772,25 +789,14 @@ $ make</code></pre>
 $ ldconfig</code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>For generating a full
-<a href="https://www.nxp.com/support/developer-resources/software-center/eiq-ml-development-environment:EIQ">eIQ</a>
-image for <em>i.MX8 Arm 64</em> boards, start by using the
-<a href="https://www.nxp.com/docs/en/nxp/user-guides/UM11226.pdf">NXP eIQ&#8482; Machine Learning Enablement</a>
-for setting up the Yocto accordingly. Then:</p>
-</li>
-</ul>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">$ cp -a meta-robinbird fsl-community-bsp/sources
-$ bitbake robin-bird</code></pre>
 </div>
+<div class="sect3">
+<h4 id="_embedded_system_compilation">Embedded System Compilation</h4>
+<div class="paragraph">
+<p>(to be continued)</p>
 </div>
 <div style="page-break-after: always;"></div>
-</div>
 </div>
 </div>
 <div class="sect2">
