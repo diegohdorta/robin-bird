@@ -8,17 +8,22 @@ Robin Bird along with
 [NXP eIQ(TM) Machine Learning Enablement](https://www.nxp.com/docs/en/nxp/user-guides/UM11226.pdf)
 allows ways for solving real world problems on embedded systems.
 
-Use the next commands to generate a full Robin Bird guide before diving into
-it. This documentation<sup>1</sup> can provide a complete understanding of
-Robin Bird library:
+# Getting Started with Robin Bird
+
+Use the next commands to generate a full `Robin Bird` guide before diving into
+the library. This documentation<sup>1</sup> can provide a complete understanding
+of the library:
 ```bash
 $ gem install bundler
-$ bundle install
 $ cd docs/
+$ bundle install
 $ bundle exec rake build
 ```
-The guides are saved in `docs/pdf` and `docs/html`, use any PDF reader tool or a
-web browser to read the documentation as follows:
+
+## Reading
+
+The guides are saved in `docs/pdf` and `docs/html` folders. Use any PDF reader
+tool or a web browser to read the documentation as follows:
 
 ```bash
 $ evince pdf/robinbird.pdf
