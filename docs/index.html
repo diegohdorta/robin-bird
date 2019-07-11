@@ -862,26 +862,23 @@ $ ldconfig</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;chrono&gt;</span>
-<span class="preprocessor">#include</span> <span class="include">&lt;iostream&gt;</span>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;iostream&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;time.h&gt;</span>
 
 <span class="preprocessor">#include</span> <span class="include">&quot;robin/robin-nn.h&quot;</span>
 
 <span class="directive">static</span> <span class="predefined-type">double</span> random(<span class="predefined-type">double</span> x);
 
-<span class="predefined-type">int</span> main(<span class="directive">void</span>)
+<span class="predefined-type">int</span> main(<span class="predefined-type">int</span> argc, <span class="predefined-type">char</span> *argv[])
 {
-    <span class="directive">auto</span> start = std::chrono::system_clock::now();
-    <span class="directive">auto</span> end = std::chrono::system_clock::now();
-    std::chrono::duration&lt;<span class="predefined-type">double</span>&gt; elapsed_seconds = end - start;
-    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Start at </span><span class="delimiter">&quot;</span></span> &lt;&lt; std::ctime(&amp;end_time) &lt;&lt; std::endl;
+    <span class="keyword">if</span> (argc &lt; <span class="integer">2</span>) {
+        std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Missing matrix size</span><span class="delimiter">&quot;</span></span> &lt;&lt; std::endl;
+        <span class="keyword">return</span> <span class="integer">0</span>;
+    }
 
-    start = std::chrono::system_clock::now();
-
+    <span class="predefined-type">double</span> size = atof(argv[<span class="integer">1</span>]);
     srand(time(<span class="predefined-constant">NULL</span>));
-    Matrix &lt;<span class="predefined-type">double</span>&gt; A(<span class="integer">3</span>, <span class="integer">3</span>), B(<span class="integer">3</span>, <span class="integer">3</span>);
+    Matrix &lt;<span class="predefined-type">double</span>&gt; A(size, size), B(size, size);
 
     A = A.applyFunction(random);
     B = B.applyFunction(random);
@@ -892,16 +889,9 @@ $ ldconfig</code></pre>
     std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A + B:</span><span class="char">\n</span><span class="delimiter">&quot;</span></span> &lt;&lt; A + B &lt;&lt; std::endl;
     std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A * B:</span><span class="char">\n</span><span class="delimiter">&quot;</span></span> &lt;&lt; A.dot(B) &lt;&lt; std::endl;
 
-    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A(0,0): </span><span class="delimiter">&quot;</span></span>&lt;&lt; A(<span class="integer">0</span>,<span class="integer">0</span>) &lt;&lt; std::endl;
-    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A(2,2): </span><span class="delimiter">&quot;</span></span>&lt;&lt; A(<span class="integer">2</span>,<span class="integer">2</span>) &lt;&lt; std::endl;
-
-    end = std::chrono::system_clock::now();
-    elapsed_seconds = end - start;
-    end_time = std::chrono::system_clock::to_time_t(end);
-    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="char">\n</span><span class="content">Ended at </span><span class="delimiter">&quot;</span></span>
-              &lt;&lt; std::ctime(&amp;end_time)
-              &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Training time: </span><span class="delimiter">&quot;</span></span> &lt;&lt; elapsed_seconds.count()
-              &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span> &lt;&lt; std::endl;
+    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A(1,1): </span><span class="delimiter">&quot;</span></span>&lt;&lt; A(<span class="integer">0</span>,<span class="integer">0</span>) &lt;&lt; std::endl;
+    std::cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Matrix A(</span><span class="delimiter">&quot;</span></span> &lt;&lt; size &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">,</span><span class="delimiter">&quot;</span></span> &lt;&lt; size &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">): </span><span class="delimiter">&quot;</span></span>
+              &lt;&lt; A(size - <span class="integer">1</span>, size -<span class="integer">1</span>) &lt;&lt; std::endl;
 
     <span class="keyword">return</span> <span class="integer">0</span>;
 }

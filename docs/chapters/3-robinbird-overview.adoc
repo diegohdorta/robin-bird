@@ -22,7 +22,6 @@ Create a simple `.cpp` file and import the library:
 
 [source,c]
 ----
-#include <chrono>
 #include <iostream>
 #include <time.h>
 
@@ -30,18 +29,16 @@ Create a simple `.cpp` file and import the library:
 
 static double random(double x);
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    auto start = std::chrono::system_clock::now();
-    auto end = std::chrono::system_clock::now();
-    std::chrono::duration<double> elapsed_seconds = end - start;
-    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-    std::cout << "Start at " << std::ctime(&end_time) << std::endl;
+    if (argc < 2) {
+        std::cout << "Missing matrix size" << std::endl;    
+        return 0;
+    }
     
-    start = std::chrono::system_clock::now(); 
-
+    double size = atof(argv[1]);
     srand(time(NULL));
-    Matrix <double> A(3, 3), B(3, 3);
+    Matrix <double> A(size, size), B(size, size);
 
     A = A.applyFunction(random);
     B = B.applyFunction(random);
@@ -52,16 +49,9 @@ int main(void)
     std::cout << "Matrix A + B:\n" << A + B << std::endl;
     std::cout << "Matrix A * B:\n" << A.dot(B) << std::endl;
     
-    std::cout << "Matrix A(0,0): "<< A(0,0) << std::endl;
-    std::cout << "Matrix A(2,2): "<< A(2,2) << std::endl;
-    
-    end = std::chrono::system_clock::now();    
-    elapsed_seconds = end - start;
-    end_time = std::chrono::system_clock::to_time_t(end);
-    std::cout << "\n\nEnded at "
-              << std::ctime(&end_time)
-              << "Training time: " << elapsed_seconds.count()
-              << "s" << std::endl;
+    std::cout << "Matrix A(1,1): "<< A(0,0) << std::endl;
+    std::cout << "Matrix A(" << size << "," << size << "): "
+              << A(size - 1, size -1) << std::endl;
     
     return 0;
 }
