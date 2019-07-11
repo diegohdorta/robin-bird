@@ -1,2 +1,2 @@
-add_subdirectory(1-sample)
-add_subdirectory(2-hwd)
+add_subdirectory(sample)
+add_subdirectory(handWrittenDigit)
