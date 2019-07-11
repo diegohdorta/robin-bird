@@ -20,7 +20,7 @@ $ bundle install
 $ bundle exec rake build
 ```
 
-Read the documentation online on [therobinbird.org](https://diegohdorta.github.io/robin-bird-page/).
+Read the online documentation on [therobinbird.org](https://diegohdorta.github.io/robin-bird-page/).
 
 ## Reading
 
