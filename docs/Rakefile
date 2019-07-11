@@ -7,6 +7,7 @@ namespace :build do
   end
   task :html do
     `bundle exec asciidoctor robinbird.adoc -o html/robinbird.html`
+    `bundle exec asciidoctor robinbird.adoc -o index.html`
     puts ">> HTML >> file was generated in: html/ folder."
   end
 end

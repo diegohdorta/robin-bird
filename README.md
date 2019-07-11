@@ -20,7 +20,7 @@ $ bundle install
 $ bundle exec rake build
 ```
 
-Read the online documentation on [therobinbird.org](https://diegohdorta.github.io/robin-bird-page/).
+<sup>1</sup> Read the online documentation on [therobinbird.org](https://diegohdorta.github.io/robin-bird/).
 
 ## Reading
 
@@ -35,5 +35,3 @@ $ firefox html/robinbird/.html
 # Maintainer
 
 * Diego Dorta <diego.dorta@nxp.com>
-
-<sup>1</sup> For more information about [Asciidoctor](https://asciidoctor.org/).
