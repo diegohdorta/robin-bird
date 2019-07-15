@@ -18,7 +18,8 @@ $ -L/usr/local/lib -lrobin
 
 ==== Sample
 
-Create a simple `.cpp` file and import the library:
+Create a simple `.cpp` file and use the following example to test if the library
+is working properly:
 
 [source,c]
 ----
@@ -76,4 +77,23 @@ Run the example:
 $ ./a.out
 ----
 
-image::assets/sample.gif[aaa]
+image::assets/sample.gif[sample]
+
+==== Handwritten Digit
+
+The MNIST is most commonly database used for handwritten digits examples, however
+to create a database is not complicate, here a picture was convert into gray scale,
+then all the black spots receives one and the white ones receives zero, as follows:
+
+image::assets/bw_number.png[example]
+
+With that, it is possible to start writing a simple code to training this model:
+
+
+
+
+
+
+
+
+
