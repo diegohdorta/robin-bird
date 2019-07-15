@@ -25,7 +25,7 @@ Create a simple `.cpp` file and import the library:
 #include <iostream>
 #include <time.h>
 
-#include "robin/robin-nn.h"
+#include <robin/robin-nn.h>
 
 static double random(double x);
 
@@ -75,3 +75,5 @@ Run the example:
 ----
 $ ./a.out
 ----
+
+image::assets/sample.gif[aaa]
