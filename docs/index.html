@@ -566,6 +566,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#robinbird-overview">Robin Bird Overview</a>
 <ul class="sectlevel3">
 <li><a href="#_sample">Sample</a></li>
+<li><a href="#_handwritten_digit">Handwritten Digit</a></li>
 </ul>
 </li>
 </ul>
@@ -858,14 +859,15 @@ $ ldconfig</code></pre>
 <div class="sect3">
 <h4 id="_sample">Sample</h4>
 <div class="paragraph">
-<p>Create a simple <code>.cpp</code> file and import the library:</p>
+<p>Create a simple <code>.cpp</code> file and use the following example to test if the library
+is working properly:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;iostream&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;time.h&gt;</span>
 
-<span class="preprocessor">#include</span> <span class="include">&quot;robin/robin-nn.h&quot;</span>
+<span class="preprocessor">#include</span> <span class="include">&lt;robin/robin-nn.h&gt;</span>
 
 <span class="directive">static</span> <span class="predefined-type">double</span> random(<span class="predefined-type">double</span> x);
 
@@ -920,8 +922,24 @@ $ ldconfig</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="assets/sample.gif" alt="aaa">
+<img src="assets/sample.gif" alt="sample">
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_handwritten_digit">Handwritten Digit</h4>
+<div class="paragraph">
+<p>The MNIST is most commonly database used for handwritten digits examples, however
+to create a database is not complicate, here a picture was convert into gray scale,
+then all the black spots receives one and the white ones receives zero, as follows:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/bw_number.png" alt="example">
+</div>
+</div>
+<div class="paragraph">
+<p>With that, it is possible to start writing a simple code to training this model:</p>
 </div>
 </div>
 </div>
@@ -931,7 +949,7 @@ $ ldconfig</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2019-07-03 16:31:11 -03
+Last updated 2019-07-10 15:32:04 -03
 </div>
 </div>
 </body>
