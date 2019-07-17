@@ -12,3 +12,8 @@ target_link_libraries(hwd-digit
 	${ROBIN_COMMON_LIBS}
 	${ADDITIONAL_LIBRARIES}
 )
+
+install(TARGETS hwd-digit
+# In order to export target, uncomment next line
+#   EXPORT ${PROJECT_EXPORT}
+  RUNTIME DESTINATION "${INSTALL_BIN_DIR}" COMPONENT bin)
