@@ -14,18 +14,23 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <https://www.gnu.org/licenses/>.
  */
-#include "robin-image.h"
-#include "robin-nn.h"
-
-#include "hwd.h"
+#include <robin/robin-image.h>
+#include <robin/robin-nn.h>
+#include <robin/hwd.h>
 
 int main(int argc, char **argv)
 {
-    RobinBird nn("hwd-digits-model.rb");
+    if (argc < 3) {
+        std::cout << "Use: " << argv[0] << " model image" << std::endl;
+        return 1;
+    }
+    const char *modelName = argv[1];
+    const char *imageName = argv[2];
+    
+    RobinBird nn(modelName);
     HandwrittenDigit foo(std::move(nn));
     
-    std::vector<double> image = readImage("media/number.png");
-    
+    std::vector<double> image = readImage(imageName);    
     foo.runInferenceSingleImage(image);
 
     return 0;
