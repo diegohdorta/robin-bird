@@ -786,13 +786,16 @@ $ cd build</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>-DROBIN_BIRD, enables <code>Robin Bird</code> library.</p>
+<p>ROBIN_BIRD, enables <code>Robin Bird</code> library;</p>
 </li>
 <li>
-<p>-DSAMPLES, enables <code>Robin Bird</code> samples.</p>
+<p>SAMPLES, enables <code>Robin Bird</code> samples;</p>
 </li>
 <li>
-<p>-DINSTURMENT_FOR_FUZZING, enables fuzzing tests.</p>
+<p>ROBIN_BIN_INSTALL_DIR, defines where the samples are installed;</p>
+</li>
+<li>
+<p>INSTURMENT_FOR_FUZZING, enables fuzzing tests.</p>
 </li>
 </ul>
 </div>
@@ -801,7 +804,10 @@ $ cd build</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">$ cmake .. -DROBIN_BIRD=ON -DSAMPLES=ON -DINSTURMENT_FOR_FUZZING=ON
+<pre class="CodeRay highlight"><code data-lang="bash">$ cmake .. -DROBIN_BIRD=ON \
+           -DSAMPLES=ON \
+           -DINSTURMENT_FOR_FUZZING=ON \
+           -DROBIN_BIN_INSTALL_DIR=/bin
 $ make</code></pre>
 </div>
 </div>

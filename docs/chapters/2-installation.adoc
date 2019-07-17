@@ -58,15 +58,19 @@ $ cd build
 Use the following flags for including fuzzing, samples and the lib to the
 `Unix Makefile` generate by cmake:
 
-* -DROBIN_BIRD, enables `Robin Bird` library.
-* -DSAMPLES, enables `Robin Bird` samples.
-* -DINSTURMENT_FOR_FUZZING, enables fuzzing tests.
+* ROBIN_BIRD, enables `Robin Bird` library;
+* SAMPLES, enables `Robin Bird` samples;
+* ROBIN_BIN_INSTALL_DIR, defines where the samples are installed;
+* INSTURMENT_FOR_FUZZING, enables fuzzing tests.
 
 For a normal `Robin Bird` installation:
 
 [source,bash]
 ----
-$ cmake .. -DROBIN_BIRD=ON -DSAMPLES=ON -DINSTURMENT_FOR_FUZZING=ON
+$ cmake .. -DROBIN_BIRD=ON \
+           -DSAMPLES=ON \
+           -DINSTURMENT_FOR_FUZZING=ON \
+           -DROBIN_BIN_INSTALL_DIR=/bin
 $ make
 ----
 
