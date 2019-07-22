@@ -87,13 +87,117 @@ then all the black spots receives one and the white ones receives zero, as follo
 
 image::assets/bw_number.png[example]
 
-With that, it is possible to start writing a simple code to training this model:
+==== Training and Testing
 
+With those black and white images it is possible to start computing the model.
+Download these datasets with only 936 images for training and 10 images for testing:
 
+* https://raw.githubusercontent.com/diegohdorta/robin-bird/master/robin/models/hwd-digits-train.rb?token=ACQLYQSRU2BR5NU7KE4XVPS5GX5A4[936 images for training];
+* https://raw.githubusercontent.com/diegohdorta/robin-bird/master/robin/models/hwd-digits-test.rb?token=ACQLYQSPIU5UHWW4LVEZSVS5GX5CM[10 images for training].
 
+===== Training 100 images
 
+Training and testing only **100 images** from 936 images:
 
+[source,bash]
+----
+$ ./hwd-digit hwd-digits-train.rb 100 hwd-digits-test.rb 10 100 0.7
+Start training at Mon Jul 22 14:30:51 2019
 
+Training # 30 - 30
 
+Ended training at Mon Jul 22 14:31:12 2019
+Training time: 21.1311s
+
+       Expected     <>     Actual
+
+0 0 0 0 0 0 0 0 1 0 <> 0 0 0 0 0 0 0 0 0 0 
+
+0 1 0 0 0 0 0 0 0 0 <> 0 0.190293 0 0 0.33999 0 0 0 0 0 
+
+0 0 0 0 1 0 0 0 0 0 <> 0 0 0 0 0.894564 0 0.108708 0 0 0 
+
+0 0 0 0 0 1 0 0 0 0 <> 0 0 0 0 0 0.890852 0 0 0 0 
+
+0 0 0 0 1 0 0 0 0 0 <> 0 0 0 0 0.687917 0 0.153405 0 0 0 
+
+0 0 0 0 0 0 0 0 1 0 <> 0 0.362404 0 0 0 0 0 0 0.268646 0 
+
+0 0 0 1 0 0 0 0 0 0 <> 0 0 0 0.461285 0 0 0 0 0.105131 0 
+
+0 1 0 0 0 0 0 0 0 0 <> 0 0.357311 0 0 0 0 0 0 0 0 
+
+0 0 0 0 0 0 1 0 0 0 <> 0 0 0 0 0 0 1 0 0 0 
+
+0 0 0 0 0 1 0 0 0 0 <> 0 0 0 0 0 1 0 0 0 0 
+
+Inference time: 0.0117838s
+----
+
+===== Training 100 images
+
+Training and testing only **936 images** from 936 images:
+
+[source,bash]
+----
+$ ./hwd-digit hwd-digits-train.rb 936 hwd-digits-test.rb 10 100 0.7
+Start training at Mon Jul 22 14:32:36 2019
+
+Training # 30 - 30
+
+Ended training at Mon Jul 22 14:35:55 2019
+Training time: 198.661s
+
+       Expected     <>     Actual
+
+0 0 0 0 0 0 0 0 1 0 <> 0 0 0 0 0 0 0 0 0.178553 0 
+
+0 1 0 0 0 0 0 0 0 0 <> 0 1 0 0 0 0 0 0 0 0 
+
+0 0 0 0 1 0 0 0 0 0 <> 0 0 0 0 1 0 0 0 0 0 
+
+0 0 0 0 0 1 0 0 0 0 <> 0 0 0 0 0 1 0 0 0 0 
+
+0 0 0 0 1 0 0 0 0 0 <> 0 0 0 0 1 0 0 0 0 0 
+
+0 0 0 0 0 0 0 0 1 0 <> 0 0 0 0 0 0 0 0 1 0 
+
+0 0 0 1 0 0 0 0 0 0 <> 0 0 0 1 0 0 0 0 0 0 
+
+0 1 0 0 0 0 0 0 0 0 <> 0 0.113826 0 0 0 0 0 0 0.100221 0 
+
+0 0 0 0 0 0 1 0 0 0 <> 0 0 0 0 0 0 1 0 0 0 
+
+0 0 0 0 0 1 0 0 0 0 <> 0 0 0 0 0 1 0 0 0 0 
+
+Inference time: 0.0117253s
+----
+
+See the differente between 100 and 936 images, the accuracy is higher better.
+
+==== Input Testing
+
+The image and models for testing:
+
+image::assets/number.png[sample]
+
+* https://raw.githubusercontent.com/diegohdorta/robin-bird/master/robin/models/2019_07_22_14_31_12_hwd-model.rb?token=ACQLYQQTFNRBFXSEH6DPG4C5GX5DQ[100 pre-trained images];
+* https://raw.githubusercontent.com/diegohdorta/robin-bird/master/robin/models/2019_07_22_14_31_12_hwd-model.rb?token=ACQLYQRHJEF4DAQMOQ42YR25GX5FA[936 pra-trained images].
+
+Testing with 100 images pre-trained model:
+
+[source,bash]
+----
+$ ./hwd-digit-input 2019_07_22_14_31_12_hwd-model.rb number.png 
+0 0 0 0.249485 0 0 0 0 0 0 
+----
+
+Testing with 936 images pre-trained model:
+
+[source,bash]
+----
+./hwd-digit-input 2019_07_22_14_35_55_hwd-model.rb number.png 
+0 0 0 0.761381 0 0 0 0 0 0
+----
 
 

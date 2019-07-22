@@ -567,6 +567,13 @@ table.CodeRay td.code>pre{padding:0}
 <ul class="sectlevel3">
 <li><a href="#_sample">Sample</a></li>
 <li><a href="#_handwritten_digit">Handwritten Digit</a></li>
+<li><a href="#_training_and_testing">Training and Testing</a>
+<ul class="sectlevel4">
+<li><a href="#_training_100_images">Training 100 images</a></li>
+<li><a href="#_training_100_images_2">Training 100 images</a></li>
+</ul>
+</li>
+<li><a href="#_input_testing">Input Testing</a></li>
 </ul>
 </li>
 </ul>
@@ -944,8 +951,146 @@ then all the black spots receives one and the white ones receives zero, as follo
 <img src="assets/bw_number.png" alt="example">
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_training_and_testing">Training and Testing</h4>
 <div class="paragraph">
-<p>With that, it is possible to start writing a simple code to training this model:</p>
+<p>With those black and white images it is possible to start computing the model.
+Download these datasets with only 936 images for training and 10 images for testing:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://raw.githubusercontent.com/diegohdorta/robin-bird/master/robin/models/hwd-digits-train.rb?token=ACQLYQSRU2BR5NU7KE4XVPS5GX5A4">936 images for training</a>;</p>
+</li>
+<li>
+<p><a href="https://raw.githubusercontent.com/diegohdorta/robin-bird/master/robin/models/hwd-digits-test.rb?token=ACQLYQSPIU5UHWW4LVEZSVS5GX5CM">10 images for training</a>.</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="_training_100_images">Training 100 images</h5>
+<div class="paragraph">
+<p>Training and testing only <strong>100 images</strong> from 936 images:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">$ ./hwd-digit hwd-digits-train.rb 100 hwd-digits-test.rb 10 100 0.7
+Start training at Mon Jul 22 14:30:51 2019
+
+Training # 30 - 30
+
+Ended training at Mon Jul 22 14:31:12 2019
+Training time: 21.1311s
+
+       Expected     &lt;&gt;     Actual
+
+0 0 0 0 0 0 0 0 1 0 &lt;&gt; 0 0 0 0 0 0 0 0 0 0
+
+0 1 0 0 0 0 0 0 0 0 &lt;&gt; 0 0.190293 0 0 0.33999 0 0 0 0 0
+
+0 0 0 0 1 0 0 0 0 0 &lt;&gt; 0 0 0 0 0.894564 0 0.108708 0 0 0
+
+0 0 0 0 0 1 0 0 0 0 &lt;&gt; 0 0 0 0 0 0.890852 0 0 0 0
+
+0 0 0 0 1 0 0 0 0 0 &lt;&gt; 0 0 0 0 0.687917 0 0.153405 0 0 0
+
+0 0 0 0 0 0 0 0 1 0 &lt;&gt; 0 0.362404 0 0 0 0 0 0 0.268646 0
+
+0 0 0 1 0 0 0 0 0 0 &lt;&gt; 0 0 0 0.461285 0 0 0 0 0.105131 0
+
+0 1 0 0 0 0 0 0 0 0 &lt;&gt; 0 0.357311 0 0 0 0 0 0 0 0
+
+0 0 0 0 0 0 1 0 0 0 &lt;&gt; 0 0 0 0 0 0 1 0 0 0
+
+0 0 0 0 0 1 0 0 0 0 &lt;&gt; 0 0 0 0 0 1 0 0 0 0
+
+Inference time: 0.0117838s</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_training_100_images_2">Training 100 images</h5>
+<div class="paragraph">
+<p>Training and testing only <strong>936 images</strong> from 936 images:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">$ ./hwd-digit hwd-digits-train.rb 936 hwd-digits-test.rb 10 100 0.7
+Start training at Mon Jul 22 14:32:36 2019
+
+Training # 30 - 30
+
+Ended training at Mon Jul 22 14:35:55 2019
+Training time: 198.661s
+
+       Expected     &lt;&gt;     Actual
+
+0 0 0 0 0 0 0 0 1 0 &lt;&gt; 0 0 0 0 0 0 0 0 0.178553 0
+
+0 1 0 0 0 0 0 0 0 0 &lt;&gt; 0 1 0 0 0 0 0 0 0 0
+
+0 0 0 0 1 0 0 0 0 0 &lt;&gt; 0 0 0 0 1 0 0 0 0 0
+
+0 0 0 0 0 1 0 0 0 0 &lt;&gt; 0 0 0 0 0 1 0 0 0 0
+
+0 0 0 0 1 0 0 0 0 0 &lt;&gt; 0 0 0 0 1 0 0 0 0 0
+
+0 0 0 0 0 0 0 0 1 0 &lt;&gt; 0 0 0 0 0 0 0 0 1 0
+
+0 0 0 1 0 0 0 0 0 0 &lt;&gt; 0 0 0 1 0 0 0 0 0 0
+
+0 1 0 0 0 0 0 0 0 0 &lt;&gt; 0 0.113826 0 0 0 0 0 0 0.100221 0
+
+0 0 0 0 0 0 1 0 0 0 &lt;&gt; 0 0 0 0 0 0 1 0 0 0
+
+0 0 0 0 0 1 0 0 0 0 &lt;&gt; 0 0 0 0 0 1 0 0 0 0
+
+Inference time: 0.0117253s</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See the differente between 100 and 936 images, the accuracy is higher better.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_input_testing">Input Testing</h4>
+<div class="paragraph">
+<p>The image and models for testing:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/number.png" alt="sample">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://raw.githubusercontent.com/diegohdorta/robin-bird/master/robin/models/2019_07_22_14_31_12_hwd-model.rb?token=ACQLYQQTFNRBFXSEH6DPG4C5GX5DQ">100 pre-trained images</a>;</p>
+</li>
+<li>
+<p><a href="https://raw.githubusercontent.com/diegohdorta/robin-bird/master/robin/models/2019_07_22_14_31_12_hwd-model.rb?token=ACQLYQRHJEF4DAQMOQ42YR25GX5FA">936 pra-trained images</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Testing with 100 images pre-trained model:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">$ ./hwd-digit-input 2019_07_22_14_31_12_hwd-model.rb number.png
+0 0 0 0.249485 0 0 0 0 0 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Testing with 936 images pre-trained model:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">./hwd-digit-input 2019_07_22_14_35_55_hwd-model.rb number.png
+0 0 0 0.761381 0 0 0 0 0 0</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -955,7 +1100,7 @@ then all the black spots receives one and the white ones receives zero, as follo
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2019-07-03 16:31:11 -03
+Last updated 2019-07-22 10:47:50 -03
 </div>
 </div>
 </body>
