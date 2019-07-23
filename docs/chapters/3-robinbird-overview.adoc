@@ -101,7 +101,7 @@ Training and testing only **100 images** from 936 images:
 
 [source,bash]
 ----
-$ ./hwd-digit hwd-digits-train.rb 100 hwd-digits-test.rb 10 100 0.7
+$ hwd-digit hwd-digits-train.rb 100 hwd-digits-test.rb 10 100 0.7
 Start training at Mon Jul 22 14:30:51 2019
 
 Training # 30 - 30
@@ -140,7 +140,7 @@ Training and testing only **936 images** from 936 images:
 
 [source,bash]
 ----
-$ ./hwd-digit hwd-digits-train.rb 936 hwd-digits-test.rb 10 100 0.7
+$ hwd-digit hwd-digits-train.rb 936 hwd-digits-test.rb 10 100 0.7
 Start training at Mon Jul 22 14:32:36 2019
 
 Training # 30 - 30
@@ -188,7 +188,7 @@ Testing with 100 images pre-trained model:
 
 [source,bash]
 ----
-$ ./hwd-digit-input 2019_07_22_14_31_12_hwd-model.rb number.png 
+$ hwd-digit-input 2019_07_22_14_31_12_hwd-model.rb number.png
 0 0 0 0.249485 0 0 0 0 0 0 
 ----
 
@@ -196,7 +196,7 @@ Testing with 936 images pre-trained model:
 
 [source,bash]
 ----
-./hwd-digit-input 2019_07_22_14_35_55_hwd-model.rb number.png 
+$ hwd-digit-input 2019_07_22_14_35_55_hwd-model.rb number.png 
 0 0 0 0.761381 0 0 0 0 0 0
 ----
 
