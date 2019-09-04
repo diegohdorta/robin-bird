@@ -1,4 +1,4 @@
 add_subdirectory(handWrittenDigitCL)
 add_subdirectory(handWrittenDigitInputCL)
 #add_subdirectory(handWrittenDigitUI)
-#add_subdirectory(handWrittenDigitInputUI)
+add_subdirectory(handWrittenDigitInputUI)
