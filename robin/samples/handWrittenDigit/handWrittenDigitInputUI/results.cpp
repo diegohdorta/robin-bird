@@ -40,7 +40,7 @@ void Results::initialize() {
 }
 
 void Results::get_results(){
-	RobinBird nn("2019_07_22_14_35_55_hwd-model.rb");
+	RobinBird nn(modelName);
 	HandwrittenDigit foo(std::move(nn));
 
 	std::vector<double> image = readImage("cropped.png");

@@ -19,6 +19,7 @@ public:
 	virtual ~Results();
 	void clear_results();
 	void get_results();
+	const char *modelName;
 	
 protected:
 	void initialize();

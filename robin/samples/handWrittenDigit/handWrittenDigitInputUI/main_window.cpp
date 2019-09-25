@@ -16,7 +16,7 @@
  */
 #include "main_window.h"
 
-MainWindow::MainWindow() : clearButton("Clear") {
+MainWindow::MainWindow(int argc, char *argv[]) : clearButton("Clear") {
 	set_title("AI/ML Digit Gui - v0.1");
 	set_border_width(10);
 	
@@ -51,6 +51,8 @@ MainWindow::MainWindow() : clearButton("Clear") {
 
 	clearButton.signal_clicked().connect(sigc::mem_fun(mainDrawArea,
 			&HandWrittenDigitInputUI::on_clear_button));
+
+	mainDrawArea.resultsLink.modelName = argv[1];
 
 	add(mainGrid);
 

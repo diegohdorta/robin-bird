@@ -19,10 +19,13 @@
 
 int main (int argc, char *argv[])
 {
+    if (argc < 2) {
+        std::cout << "Use: " << argv[0] << " model" << std::endl;
+        return 1;
+    }
 
-	auto app = Gtk::Application::create(argc, argv);
-
-	MainWindow window;
+	auto app = Gtk::Application::create();
+	MainWindow window(argc, argv);
 
 	return app->run(window);
 }

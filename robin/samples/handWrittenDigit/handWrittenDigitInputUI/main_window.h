@@ -27,7 +27,7 @@
 
 class MainWindow : public Gtk::Window {
 public:
-	MainWindow();
+	MainWindow(int argc, char *argv[]);
 	virtual ~MainWindow();
 
 private:
