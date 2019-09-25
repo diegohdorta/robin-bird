@@ -21,6 +21,9 @@
 
 #include "handWrittenDigitInputUI.h"
 #include "results.h"
+#include <robin-image.h>
+#include <robin-nn.h>
+#include <hwd.h>
 
 class MainWindow : public Gtk::Window {
 public:
@@ -34,7 +37,6 @@ private:
 	Gtk::Label drawAreaLabel, resultLabel, digitLabel;
 	Gtk::Frame drawAreaFrame, drawDigitFrame, resultFrame;
 	HandWrittenDigitInputUI mainDrawArea;
-	Results resultsGrid;
 	Gtk::Button clearButton;
 };
 

@@ -38,7 +38,11 @@ void HandWrittenDigitInputUI::clear_surface() {
 }
 
 void HandWrittenDigitInputUI::draw_brush(double x, double y) {
-	cr->rectangle(x, y, 20, 20);
+	cr->rectangle(x-1, y, 24, 24);
+	cr->rectangle(x+1, y, 24, 24);
+	cr->rectangle(x, y-1, 24, 24);
+	cr->rectangle(x, y+1, 24, 24);
+	cr->rectangle(x, y, 24, 24);
 	cr->fill();
 	queue_draw();
 	result_image();
@@ -50,6 +54,7 @@ void HandWrittenDigitInputUI::on_clear_button() {
 	surface->write_to_png("temp.png");
 	Mat resultImage = cv::imread("temp.png", CV_LOAD_IMAGE_GRAYSCALE);
 	imwrite("cropped.png", resultImage);
+	resultsLink.clear_results();
 }
 
 bool HandWrittenDigitInputUI::on_button_press_event(GdkEventButton *event) {
@@ -93,6 +98,8 @@ void HandWrittenDigitInputUI::result_image() {
 	roi = boundingRect(Mat(contours_t[0]));
 
 	Mat cropImage = resultImage(roi);
+	threshold(cropImage, cropImage, 0, 255, CV_THRESH_BINARY_INV);
 	resize(cropImage, cropImage, Size(32, 32), 0, 0, INTER_AREA);
 	imwrite("cropped.png", cropImage);
+	resultsLink.get_results();
 }

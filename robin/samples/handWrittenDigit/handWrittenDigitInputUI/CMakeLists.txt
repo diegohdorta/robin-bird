@@ -9,6 +9,7 @@ add_executable(handWrittenDigitInputUI
 )
 
 target_link_libraries(handWrittenDigitInputUI
+		${ROBIN_COMMON_LIBS}
         PkgConfig::GTKMM
         PkgConfig::CAIROMM
         PkgConfig::OPENCV

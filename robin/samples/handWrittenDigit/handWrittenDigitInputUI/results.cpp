@@ -34,18 +34,30 @@ void Results::initialize() {
 		percentage[i].set_text("0%");
 		percentage[i].set_alignment(Gtk::ALIGN_CENTER);
 		percentage[i].set_valign(Gtk::ALIGN_CENTER);
+		percentage[i].set_progress_fraction(-1);
 		attach(percentage[i], 0, i, 1, 1);
 	}
 }
 
-bool Results::get_results(){
-	return false;
+void Results::get_results(){
+	RobinBird nn("2019_07_22_14_35_55_hwd-model.rb");
+	HandwrittenDigit foo(std::move(nn));
+
+	std::vector<double> image = readImage("cropped.png");
+	resultsVector = foo.runInferenceSingleImageToVector(image);
+	print_results();
 }
 
 void Results::print_results () {
-	
+	for(int i = 0; i < 10; i++) {
+		percentage[i].set_text(to_string(resultsVector(0, i)));
+		percentage[i].set_progress_fraction(resultsVector(0, i));
+	}
 }
 
 void Results::clear_results() {
-	
+	for(int i = 0; i < 10; i++) {
+		percentage[i].set_text("0%");
+		percentage[i].set_progress_fraction(-1);
+	}
 }

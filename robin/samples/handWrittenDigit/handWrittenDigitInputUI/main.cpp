@@ -15,11 +15,11 @@
  * this program. If not, see <https://www.gnu.org/licenses/>.
  */
 #include <gtkmm.h>
-
 #include "main_window.h"
 
 int main (int argc, char *argv[])
 {
+
 	auto app = Gtk::Application::create(argc, argv);
 
 	MainWindow window;

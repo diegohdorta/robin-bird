@@ -13,6 +13,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
+#include "results.h"
 
 using namespace std;
 using namespace cv;
@@ -21,6 +22,7 @@ class HandWrittenDigitInputUI : public Gtk::DrawingArea {
 public:
 	HandWrittenDigitInputUI();
 
+	Results resultsLink;
 	virtual ~HandWrittenDigitInputUI() { };
 	void on_clear_button();
 	bool configure_surface ();

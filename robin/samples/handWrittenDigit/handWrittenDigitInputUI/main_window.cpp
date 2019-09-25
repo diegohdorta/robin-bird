@@ -42,7 +42,7 @@ MainWindow::MainWindow() : clearButton("Clear") {
 	mainGrid.attach(drawAreaFrame, 1, 1, 1, 1);
 
 	resultFrame.set_size_request(160, 340);
-	resultFrame.add(resultsGrid);
+	resultFrame.add(mainDrawArea.resultsLink);
 	mainGrid.attach(resultFrame, 3, 1, 1, 1);
 
 	clearButton.set_halign(Gtk::ALIGN_END);

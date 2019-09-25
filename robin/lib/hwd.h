@@ -50,6 +50,7 @@ class HandwrittenDigit
         
         
         void runInferenceSingleImage(std::vector<double> img);
+        Matrix<double> runInferenceSingleImageToVector(std::vector<double> img);
         void trainingDataset(void);
         void testingDataset(void);  
         void loadDatasetForTraining(void);
