@@ -28,6 +28,11 @@ void HandwrittenDigit::runInferenceSingleImage(std::vector<double> img)
     std::cout << this->net.computeOutput(img).applyFunction(step);
 }
 
+Matrix<double> HandwrittenDigit::runInferenceSingleImageToVector(std::vector<double> img)
+{
+    return this->net.computeOutput(img).applyFunction(step);
+}
+
 void HandwrittenDigit::trainingDataset(void)
 {
     int i = 0;
