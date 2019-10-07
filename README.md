@@ -2,15 +2,16 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Robin Bird is a small and flexible machine learning library, written in C++, that
-aims to provide simple and extensible implementations of machine learning algorithms.
-Robin Bird along with
-[NXP eIQ(TM)](https://www.nxp.com/docs/en/nxp/user-guides/UM11226.pdf)
-allows ways for solving real world problems on embedded systems.
+_Robin Bird_ is a small _Machine Learning_ library, fully experimental,
+written in _C++_ for learning purpose only. This library provides simple
+implementations of _Machine Learning_ algorithms for solving real world
+problems on embedded systems. These algorithms are released as simple command-line
+programs and classes which can be used and integrated into low to medium-scale
+_Machine Learning_ solutions.
 
 # Getting Started with Robin Bird
 
-Use the next commands to generate a full `Robin Bird` guide before diving into
+Use the next commands to generate a _Robin Bird_ guide before diving into
 the library. This documentation<sup>1</sup> can provide a complete understanding
 of the entire application programming interface, functions and binaries:
 ```bash
@@ -19,18 +20,11 @@ $ cd docs/
 $ bundle install
 $ bundle exec rake build
 ```
-
-<sup>1</sup> Read the online documentation on [therobinbird.org](https://diegohdorta.github.io/robin-bird/).
+<sup>1</sup> Read the online documentation, and also help us collecting data for our dataset on [therobinbird.org](http://10.29.244.105/robinbird/).
 
 ## Reading
 
-The guides are saved in `docs/pdf` and `docs/html` folders. Use any PDF reader
-tool or a web browser to read the documentation as follows:
-
-```bash
-$ evince pdf/robinbird.pdf
-$ firefox html/robinbird/.html
-```
+Use a PDF reader tool or a web browser to read the documentation located at _docs/output_.
 
 # Maintainer
 
