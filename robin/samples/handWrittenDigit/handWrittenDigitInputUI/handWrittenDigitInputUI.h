@@ -1,6 +1,6 @@
-/* Copyright (c) 2019 NXP Semiconductors
+/* Copyright 2019 NXP Semiconductors
  *
- * SPDX-License-Identifier: GPL3
+ * SPDX-License-Identifier: MIT
  * Marco Franchi <marco.franchi@nxp.com>
  */
 #ifndef GTKMM_HANDWRITTEN_DIGIT_INPUT_UI_H

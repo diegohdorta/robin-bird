@@ -1,3 +1,8 @@
+/* Copyright 2019 NXP Semiconductors
+ *   
+ * SPDX-License-Identifier: MIT
+ * Marco Franchi <marco.franchi@nxp.com>
+ */
 #ifndef RESULTS_H
 #define RESULTS_H
 

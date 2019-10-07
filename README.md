@@ -1,6 +1,6 @@
 # The Robin Bird Library
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Robin Bird is a small and flexible machine learning library, written in C++, that
 aims to provide simple and extensible implementations of machine learning algorithms.

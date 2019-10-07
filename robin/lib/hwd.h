@@ -1,6 +1,6 @@
-/* Copyright (c) 2019 NXP Semiconductors
+/* Copyright 2019 NXP Semiconductors
  * Diego Dorta <diego.dorta@nxp.com>
- * SPDX-License-Identifier: GLP3
+ * SPDX-License-Identifier: MIT
  */
 #ifndef HWD_H
 #define HWD_H
