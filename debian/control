@@ -1,0 +1,11 @@
+Source: robin-bird
+Section: devel
+Priority: optional
+Maintainer: Diego Dorta <diego.dorta@nxp.com>
+Build-Depends: cmake, build-essential
+Homepage: https://www.yourhomepage.org
+
+Package: robin-bird
+Architecture: any
+Depends: tree
+Description: Small and fully experimental Machine Learning library.
