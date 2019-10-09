@@ -1,6 +1,6 @@
 project(robin)
 cmake_minimum_required(VERSION 3.9)
-set(PROJECT_DESCRIPTION "experimental, small and flexible C++ machine learning library")
+set(PROJECT_DESCRIPTION "small and fully experimental C++ machine learning library")
 message(STATUS "Running CMake for ${PROJECT_NAME} (${PROJECT_DESCRIPTION})")
 
 set(CMAKE_NO_SYSTEM_FROM_IMPORTED ON)
@@ -58,3 +58,7 @@ configure_file(
 )
 install(FILES "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc" DESTINATION lib/pkgconfig)
 add_subdirectory(robin)
+
+SET(CPACK_GENERATOR "DEB")
+SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "KK") #required
+INCLUDE(CPack)
