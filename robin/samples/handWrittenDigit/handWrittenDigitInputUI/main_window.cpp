@@ -37,6 +37,11 @@ MainWindow::MainWindow(int argc, char *argv[]) : clearButton("Clear") {
 	resultBox.pack_start(resultLabel);
 	mainGrid.attach(resultBox, 3, 0, 1, 1);
 
+	inferenceLabel.set_text("Inference Time: ");
+	inferenceLabel.set_halign(Gtk::ALIGN_START);
+	inferenceBox.pack_start(inferenceLabel);
+	mainGrid.attach(inferenceBox, 3, 3, 1, 1);
+
 	digitLabel.set_text("0\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n8\n\n9");
 	digitLabel.set_halign(Gtk::ALIGN_END);
 	digitBox.set_border_width(10);
@@ -50,11 +55,15 @@ MainWindow::MainWindow(int argc, char *argv[]) : clearButton("Clear") {
 
 	resultFrame.set_size_request(160, 340);
 	resultFrame.add(mainDrawArea.resultsLink);
-	mainGrid.attach(resultFrame, 3, 1, 1, 1);
+	mainGrid.attach(resultFrame, 3, 1, 2, 1);
+
+	mainDrawArea.resultsLink.inferenceResultsLabel.set_halign(Gtk::ALIGN_START);
+	mainDrawArea.resultsLink.inferenceResultsBox.pack_start(mainDrawArea.resultsLink.inferenceResultsLabel);
+	mainGrid.attach(mainDrawArea.resultsLink.inferenceResultsBox, 4, 3, 1, 1);
 
 	clearButton.set_halign(Gtk::ALIGN_END);
 	clearButton.set_valign(Gtk::ALIGN_CENTER);
-	mainGrid.attach(clearButton, 1, 2, 1, 1);
+	mainGrid.attach(clearButton, 1, 3, 1, 1);
 
 	clearButton.signal_clicked().connect(sigc::mem_fun(mainDrawArea,
 			&HandWrittenDigitInputUI::on_clear_button));

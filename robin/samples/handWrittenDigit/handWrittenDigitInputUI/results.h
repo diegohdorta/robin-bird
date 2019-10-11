@@ -10,6 +10,8 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
+#include <sys/time.h>
 
 #include "math.h"
 #include <robin-image.h>
@@ -19,12 +21,17 @@
 using namespace std;
 
 class Results : public Gtk::Grid {
+
+struct timeval start, end;
+
 public:
 	Results();
 	virtual ~Results();
 	void clear_results();
 	void get_results();
 	const char *modelName;
+	Gtk::Box inferenceResultsBox;
+	Gtk::Label inferenceResultsLabel;
 	
 protected:
 	void initialize();

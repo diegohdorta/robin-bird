@@ -40,8 +40,8 @@ public:
 private:
 
 	Gtk::Grid mainGrid;
-	Gtk::Box drawAreaBox, resultBox, digitBox;
-	Gtk::Label drawAreaLabel, resultLabel, digitLabel;
+	Gtk::Box drawAreaBox, resultBox, digitBox, inferenceBox;
+	Gtk::Label drawAreaLabel, resultLabel, digitLabel, inferenceLabel;
 	Gtk::Frame drawAreaFrame, drawDigitFrame, resultFrame;
 	HandWrittenDigitInputUI mainDrawArea;
 	Gtk::Button clearButton;

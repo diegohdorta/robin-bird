@@ -47,11 +47,19 @@ void Results::initialize() {
 }
 
 void Results::get_results(){
+	gettimeofday(&start, NULL);
 	RobinBird nn(modelName);
 	HandwrittenDigit foo(std::move(nn));
 
 	std::vector<double> image = readImage("cropped.png");
 	resultsVector = foo.runInferenceSingleImageToVector(image);
+	gettimeofday(&end, NULL);
+
+	double inf = 1/((end.tv_usec - start.tv_usec)* 1e-6);
+	ostringstream strToPrint;
+	strToPrint << fixed << setprecision(2) << inf;
+	inferenceResultsLabel.set_text(strToPrint.str());
+
 	print_results();
 }
 
@@ -67,4 +75,5 @@ void Results::clear_results() {
 		percentage[i].set_text("0%");
 		percentage[i].set_progress_fraction(-1);
 	}
+	inferenceResultsLabel.set_text("");
 }
