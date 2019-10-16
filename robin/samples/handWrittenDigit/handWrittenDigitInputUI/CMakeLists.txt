@@ -2,7 +2,7 @@ find_package(PkgConfig REQUIRED)
 
 pkg_check_modules(GTKMM REQUIRED IMPORTED_TARGET gtkmm-3.0)
 pkg_check_modules(CAIROMM REQUIRED IMPORTED_TARGET cairomm-1.0)
-pkg_check_modules(OPENCV REQUIRED IMPORTED_TARGET opencv)
+pkg_check_modules(OPENCV REQUIRED IMPORTED_TARGET opencv4)
 
 add_executable(handWrittenDigitInputUI
         handWrittenDigitInputUI.cpp main_window.cpp results.cpp main.cpp
@@ -10,6 +10,7 @@ add_executable(handWrittenDigitInputUI
 
 target_link_libraries(handWrittenDigitInputUI
 		${ROBIN_COMMON_LIBS}
+		${OPENCV_LIBS}
         PkgConfig::GTKMM
         PkgConfig::CAIROMM
         PkgConfig::OPENCV

@@ -59,7 +59,7 @@ void HandWrittenDigitInputUI::on_clear_button() {
 	clear_surface();
 	queue_draw();
 	surface->write_to_png("temp.png");
-	Mat resultImage = cv::imread("temp.png", CV_LOAD_IMAGE_GRAYSCALE);
+	Mat resultImage = cv::imread("temp.png", IMREAD_GRAYSCALE);
 	imwrite("cropped.png", resultImage);
 	resultsLink.clear_results();
 }
@@ -91,21 +91,21 @@ void HandWrittenDigitInputUI::result_image() {
 	//TODO: try to convert the surface direct to a Mat Frame
 	surface->write_to_png("temp.png");
 
-	Mat resultImage = cv::imread("temp.png", CV_LOAD_IMAGE_GRAYSCALE);
+	Mat resultImage = cv::imread("temp.png", IMREAD_GRAYSCALE);
 	vector<vector<Point>> contours;
 	vector<Point> result;
 	vector<vector<Point>> contours_t;
 	Rect roi;
 
-	threshold(resultImage, resultImage, 60, 255, CV_THRESH_BINARY_INV);
-	findContours(resultImage, contours, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE);
+	threshold(resultImage, resultImage, 60, 255, THRESH_BINARY_INV);
+	findContours(resultImage, contours, RETR_TREE, CHAIN_APPROX_SIMPLE);
 	sort(contours.begin(), contours.end(), compareAreas);
 	approxPolyDP(contours[contours.size()-1], result, 0.02*arcLength(contours[contours.size()-1], true), true);
 	contours_t.push_back(result);
 	roi = boundingRect(Mat(contours_t[0]));
 
 	Mat cropImage = resultImage(roi);
-	threshold(cropImage, cropImage, 0, 255, CV_THRESH_BINARY_INV);
+	threshold(cropImage, cropImage, 0, 255, THRESH_BINARY_INV);
 	resize(cropImage, cropImage, Size(32, 32), 0, 0, INTER_AREA);
 	imwrite("cropped.png", cropImage);
 	resultsLink.get_results();

@@ -9,7 +9,7 @@
 #include <gtkmm.h>
 #include <gtkmm/drawingarea.h>
 #include <cairomm/cairomm.h>
-#include "opencv2/opencv.hpp"
+#include <opencv2/opencv.hpp>
 #include <iostream>
 #include <cstdlib>
 #include <vector>
