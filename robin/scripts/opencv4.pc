@@ -1,6 +1,6 @@
 # Package Information for pkg-config
 
-prefix=/usr/local
+prefix=/usr
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir_old=${prefix}/include/opencv4/opencv2
