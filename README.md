@@ -9,23 +9,6 @@ problems on embedded systems. These algorithms are released as simple command-li
 programs and classes which can be used and integrated into low to medium-scale
 _Machine Learning_ solutions.
 
-# Getting Started with Robin Bird
-
-Use the next commands to generate a _Robin Bird_ guide before diving into
-the library. This documentation<sup>1</sup> can provide a complete understanding
-of the entire application programming interface, functions and binaries:
-```bash
-$ gem install bundler
-$ cd docs/
-$ bundle install
-$ bundle exec rake build
-```
-<sup>1</sup> Read the online documentation, and also help us collecting data for our dataset on [therobinbird.org](http://10.29.244.105/robinbird/).
-
-## Reading
-
-Use a PDF reader tool or a web browser to read the documentation located at _docs/output_.
-
 # Maintainer
 
 * Diego Dorta <diego.dorta@nxp.com>
