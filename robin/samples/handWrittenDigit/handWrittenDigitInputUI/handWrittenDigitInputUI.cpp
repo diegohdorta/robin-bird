@@ -45,14 +45,25 @@ void HandWrittenDigitInputUI::clear_surface() {
 }
 
 void HandWrittenDigitInputUI::draw_brush(double x, double y) {
-	cr->rectangle(x-1, y, 24, 24);
-	cr->rectangle(x+1, y, 24, 24);
-	cr->rectangle(x, y-1, 24, 24);
-	cr->rectangle(x, y+1, 24, 24);
-	cr->rectangle(x, y, 24, 24);
+	xx = x;
+	yy = y;
+	cr->rectangle(xx-12, yy-12, 24, 24);
 	cr->fill();
 	queue_draw();
 	result_image();
+}
+
+void HandWrittenDigitInputUI::connect_draw_brush(double x2, double y2) {
+	cr->set_line_width(24);
+	cr->move_to(xx, yy);
+	cr->line_to(x2, y2);
+	cr->stroke();
+	cr->rectangle(x2-9, y2-9, 18, 18);
+	cr->fill();
+	queue_draw();
+	result_image();
+	xx = x2;
+	yy = y2;
 }
 
 void HandWrittenDigitInputUI::on_clear_button() {
@@ -72,7 +83,7 @@ bool HandWrittenDigitInputUI::on_button_press_event(GdkEventButton *event) {
 
 bool HandWrittenDigitInputUI::on_motion_notify_event(GdkEventMotion *event) {
 	if (event->state & Gdk::BUTTON1_MASK)
-		draw_brush(event->x, event->y);
+		connect_draw_brush(event->x, event->y);
 	return true;
 }
 

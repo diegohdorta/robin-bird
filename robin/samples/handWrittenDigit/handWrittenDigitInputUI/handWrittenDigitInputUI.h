@@ -32,10 +32,13 @@ public:
 protected:
 	virtual bool on_draw(const Cairo::RefPtr<Cairo::Context>& cr);
 	void draw_brush(double x, double y);
+	void connect_draw_brush(double x2, double y2);
 	bool on_button_press_event(GdkEventButton *event);
 	bool on_motion_notify_event(GdkEventMotion *event) override;
 	void clear_surface();
 	void result_image();
+	double xx = 0;
+	double yy = 0;
 
 }; //HandWrittenDigitInputUI
 
