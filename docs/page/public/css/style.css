@@ -1,0 +1,101 @@
+html { font-family: Arial, Helvetica, sans-serif; font-size: 12pt; }
+
+body { width: 800px; margin: auto; background: #ffffff;}
+
+#menu li {
+        #listing-style: none;
+        display: inline-block;
+        margin-right: 2em;
+        margin-left: 2em;
+        text-align: center;
+        font-weight: bolder;
+}
+#menu a { text-decoration: none; color: #000000; }
+
+#menu a:hover { text-decoration: none;  color: #339933;  }
+
+#content a {
+  color: #006600;
+  text-decoration: none;
+}
+
+#content code {
+font-size: 12.5px;
+    background-color: #c6ecd9;
+ margin: auto;
+ margin-left: auto;
+ border: 1px solid #000000;
+ position: relative;
+
+}
+
+#header h1 {
+        font-size: 2em;
+        font-variant: small-caps;
+        color: #26734d;
+        #background-color: #80aaff;
+        margin-bottom: 0;
+        margin: center;
+        text-align: center;
+}
+
+#header h2 {
+        font-size: 1,5em;
+        color: #662200;
+        #background-color: #80aaff;
+        margin-top: 0;
+        text-align: center;
+}
+
+#content > ul > li {
+        width: 200px;
+        height: 250px;
+        listing-style: none;
+        display: inline-block;
+        margin: 1.52em;
+        border: 1px solid #600;
+        overflow: hidden;
+}
+
+#content li { position: relative; }
+
+#content strong { display: block; width: 100%; }
+
+#content img { width: 100%; height: 100%; position: absolute; z-index: 10; top: 0; }
+
+#content > ul > li > p {
+        height: 90px;
+        position: absolute;
+        z-index: 20; bottom: 20;
+        color: #fff;
+        background-color: rgba(0,0,0,0.8);
+        margin-bottom: 0;
+}
+
+table td { border: 1px solid #300; width: 900px; cellspacing="0"; cellpadding="0";}
+table tr.itens td { font-weight: bold; text-align: center; color: #600;  }
+
+#footer {
+ font-size: 1.0em;
+
+ position: relative;
+ bottom: 0;
+ height: 2.5rem;
+
+ text-align: center;
+}
+
+#content table{
+ margin: auto;
+ margin-left: auto;
+ border: 1px solid #000000;
+ position: relative;
+}
+
+/*
+#content canvas {	
+
+	width: 300px;
+	height: 300px;
+    border: 2px solid black;
+}*/

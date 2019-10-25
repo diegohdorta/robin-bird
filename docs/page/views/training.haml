@@ -1,0 +1,69 @@
+%h2
+  Training
+
+%p
+  = File.read "canvas.html"
+
+%strong
+  Every 100 random images collected a new model is generated.
+
+%p
+  Get the download of the latest model:
+  %ul
+    %p
+      1. Model with 100 random numbers (low accuracy):
+      %a(href="models/2019_07_17_14_37_26_100_hwd-model.rb") 2019_07_17_14_37_26_100_hwd-model.rb
+    %p
+      2. Model with 900 random numbers (high accuracy):
+      %a(href="models/2019_07_17_14_41_06_900_hwd-model.rb") 2019_07_17_14_41_06_900_hwd-model.rb
+   
+
+
+
+-# #paint
+-#  %canvas#myCanvas{:width => 300, :height => 300}
+
+
+-# %p
+-#   = File.read "b.html"
+
+
+-#<script>
+-#var canvas = document.getElementByID("myCanvas");
+-#var context = canvas.getContext('2d');
+
+-#// draw cloud
+-#context.beginPath();
+-#context.moveTo(170, 80);
+-#context.bezierCurveTo(130, 100, 130, 150, 230, 150);
+-#context.bezierCurveTo(250, 180, 320, 180, 340, 150);
+-#context.bezierCurveTo(420, 150, 420, 120, 390, 100);
+-#context.bezierCurveTo(430, 40, 370, 30, 340, 50);
+-#context.bezierCurveTo(320, 5, 250, 20, 250, 50);
+-#context.bezierCurveTo(200, 5, 150, 20, 170, 80);
+-#context.closePath();
+-#context.lineWidth = 5;
+-#context.fillStyle = '#8ED6FF';
+-#context.fill();
+-#context.strokeStyle = '#0000ff';
+-#context.stroke();
+
+-#// save canvas image as data url (png format by default)
+-#//var dataURL = canvas.toDataURL();
+
+-#// set canvasImg image src to dataURL
+-#// so it can be saved as an image
+-#//document.getElementById('canvasImg').src = dataURL;
+
+
+-#</script>
+
+-# %button.btn.btn-lg.btn-default
+-#  %i.glyphicon.glyphicon-play
+
+-#%div{:class => 'btn-group btn-group-lg'}
+-#  %button{:class => 'btn btn-default dropdown-toggle', :type => 'button', 'data-toggle' => 'dropdown'}
+-#    %span{:class => 'caret'}
+-#    %span{:class => 'sr-only'} Send
+-#  %ul{:class => 'dropdown-menu'}
+-#    %a{:class => 'close_task', :name => 'name', :href => '#' } Close

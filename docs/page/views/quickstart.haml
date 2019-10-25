@@ -1,0 +1,57 @@
+%h2
+  Quick Start
+  
+%strong
+  How To Build an Image with RB&trade;
+
+%p
+1. Download the latest GNU/Linux BSP documentation available  
+%a(href="https://www.nxp.com/design/i.mx-developer-resources/i.mx-software-and-development-tool:IMX-SW") here.
+%ul
+  %p
+  1.1 Follow the steps from the Yocto Project User's Guide to create a build environment.
+  %section
+  NOTE: At the time this tutorial was written, the latest release available was L4.14.98-2.0.0_ga.
+
+%p
+  2. After downloading the source code, apply
+  %a(href="patches/add-robin-bird-recipe.patch") this
+  patch to the meta-fsl-bsp-release meta layer.
+  %ul
+    %p
+      %pre
+      %code
+        :preserve
+          $ cd <bsp_dir>/sources/meta-fsl-bsp-release
+    %p
+      %pre
+      %code
+        :preserve
+          $ git am <patch_dir>/add-robin-bird-recipe.patch   
+
+%p
+  3. Create the build directory:
+  %ul
+    %p
+      %pre
+      %code
+        :preserve
+          $ DISTRO=fsl-imx-xwayland MACHINE=imx8qmmek source fsl-setup-release.sh -b build-xwayland
+
+%p
+  4. Include the following lines at the end of the <bsp_dir>/build-xwayland/conf/local.conf file:
+  %ul
+    %p
+      %pre
+      %code
+        :preserve
+          IMAGE_INSTALL_append += "robin-bird"
+
+%p
+  5. Build the image:
+  %ul
+    %p
+      %pre
+      %code
+        :preserve
+          $ bitbake fsl-image-qt5

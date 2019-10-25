@@ -1,0 +1,165 @@
+<!-- Robin Bird Canvas - Rogerio -->
+
+<body  onload="init()">
+<div class="text-center">
+	<p class="lead text-center" id="number">To help us increase our dataset, draw the random number in the draw area below: <b style="color:red; font-size:125%">0</b></p>
+</div>
+
+<div class="text-center">
+	<canvas id="canvas" width="400" height="400" align= "center" style="cursor:crosshair; border:2px solid #555555"></canvas>
+	<p>
+	  <a class="btn btn-lg btn-template-main" onclick="erase()">Clear</a>
+	  <a class="btn btn-lg btn-template-main" onclick="save()">Send</a>
+    </p>
+</div>
+
+ <div id="output" >
+
+</div>
+
+
+<script>	
+	var canvas, ctx, flag = false,
+	prevX = 0,
+	currX = 0,
+	prevY = 0,
+	currY = 0,
+	dot_flag = false;
+	var offsetX=0;
+	var offsetY=0;
+	var number=0;
+	
+	var x = "black",
+	y = 36;
+	
+	function init()
+	{
+	    $('#number').html('To help us increase our dataset, draw the random number in the draw area below: <b style="color:red; font-size:125%">'+ number + '</b>')
+	    
+	    canvas = document.getElementById('canvas');
+	    ctx = canvas.getContext("2d");
+	    ctx.fillStyle = 'white';
+	    ctx.lineJoin = ctx.lineCap = 'round';
+	    ctx.fillRect(0, 0, canvas.width, canvas.height);
+	    w = canvas.width;
+	    h = canvas.height;
+	    offsetX = canvas.offsetLeft;
+	    offsetY = 241; //canvas.offsetTop; //3333
+	    number = Math.floor((Math.random() * 10));
+	    
+	    canvas.addEventListener("mousemove", function (e) {
+	        findxy('move', e)
+	    }, false);
+	    
+	    canvas.addEventListener("mousedown", function (e) {
+	        findxy('down', e)
+	    }, false);
+	    
+	    canvas.addEventListener("mouseup", function (e) {
+	        findxy('up', e)
+	    }, false);
+	    
+	    canvas.addEventListener("mouseout", function (e) {
+	        findxy('out', e)
+	    }, false);
+	
+	}
+	
+	function color(obj) {
+	    switch (obj.id) {
+	        case "green":
+	        x = "green";
+	        break;
+	        case "blue":
+	        x = "blue";
+	        break;
+	        case "red":
+	        x = "red";
+	        break;
+	        case "yellow":
+	        x = "yellow";
+	        break;
+	        case "orange":
+	        x = "orange";
+	        break;
+	        case "black":
+	        x = "black";
+	        break;
+	        case "white":
+	        x = "white";
+	        break;
+	    }
+	    if (x == "white") y = 14;
+	    else y = 2;
+	
+	}
+	
+	function draw() {
+	    ctx.beginPath();
+	    ctx.moveTo(prevX, prevY);
+	    ctx.lineTo(currX, currY);
+	    ctx.strokeStyle = x;
+	    ctx.lineWidth = y;
+	    ctx.stroke();
+	    ctx.closePath();
+	}
+	
+	function erase() {	
+	    ctx.clearRect(0, 0, w, h);
+	    ctx.fillStyle = 'white';
+	    ctx.fillRect(0, 0, canvas.width, canvas.height);
+	    number=Math.floor((Math.random() * 10));
+	    $('#number').html('To help us increase our dataset, draw the random number in the draw area below: <b style="color:red; font-size:125%">'+ number + '</b>')	    
+	}
+	
+	function save() {
+	    document.getElementById("canvas").style.border = "2px solid";
+	    var dataURL = canvas.toDataURL();
+	    
+	    $.post('/training/photo_upload.php',
+	    {
+	        img : canvas.toDataURL(),
+	        drawnumber : number
+	    });
+	    
+	    document.getElementById("canvas").src = dataURL;
+	    document.getElementById("canvas").style.display = "inline";
+	    erase();
+	}
+	
+	function findxy(res, e) {
+	    if (res == 'down') {
+	        prevX = currX;
+	        prevY = currY;
+	        currX = parseInt(e.pageX-offsetX);
+	        currY = parseInt(e.pageY-offsetY);
+	        
+	        flag = true;
+	        dot_flag = true;
+	        if (dot_flag) {
+	            ctx.beginPath();
+	            ctx.fillStyle = x;
+	            ctx.fillRect(currX, currY, 2, 2);
+	            ctx.closePath();
+	            dot_flag = false;
+	        }
+	    }
+	    if (res == 'up' || res == "out") {
+	        flag = false;
+	    }
+	    if (res == 'move') {
+	        if (flag) {
+	            prevX = currX;
+	            prevY = currY;
+	            currX = parseInt(e.pageX-offsetX);
+	            currY = parseInt(e.pageY-offsetY);
+	            draw();
+	        }
+	    }
+	    
+	//        $('#output').html('current: '+currX+', '+currY+'<br/>current: '+prevX+', '+prevY+'<br/>canvas.offsetLeft, canvas.offsetTop: '+offsetX+', '+offsetY+
+  //  '<br/>e.page: '+e.pageX+', '+e.pageY);
+	}
+</script>
+
+</body>
