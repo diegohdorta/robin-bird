@@ -55,3 +55,42 @@
       %code
         :preserve
           $ bitbake fsl-image-qt5
+
+
+%strong
+  How to Start with an Image
+  
+%p
+  1. Retrieve the image in the Download section.
+
+%p
+  2. Uncompress the image using bzip2 tool:
+  %ul
+    %p
+      %pre
+      %code
+        :preserve
+          $ bunzip2 -f image.sdcard.bz2
+%p
+  3. Flash the image to the SD Card:
+  %ul
+    %p
+      %pre
+      %code
+        :preserve
+          $ dd if=image.sdcard of=/dev/sdX bs=1M status=progress && sync
+
+%p
+  4. Retrieve the RB&trade; model in the Training section:
+  %ul
+    %p
+      %pre
+      %code
+        :preserve
+          # wget model.rb
+    %ul
+    %p
+      %pre
+      %code
+        :preserve
+          # handWrittenDigitInput model.rb
