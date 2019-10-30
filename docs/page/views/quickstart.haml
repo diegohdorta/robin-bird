@@ -61,7 +61,12 @@
   How to Start with an Image
   
 %p
-  1. Retrieve the image in the Download section.
+  1. Retrieve one of the following images:
+  %ul
+    %strong
+      %a(href="images/fsl-image-qt5-imx8qmmek-20191024163032.rootfs.sdcard.bz2") fsl-image-qt5-imx8qmmek-20191024163032.rootfs.sdcard.bz2
+    %strong
+      %a(href="images/fsl-image-qt5-imx8mmevk-20191026015747.rootfs.sdcard.bz2") fsl-image-qt5-imx8mmevk-20191026015747.rootfs.sdcard.bz2
 
 %p
   2. Uncompress the image using bzip2 tool:
@@ -70,7 +75,7 @@
       %pre
       %code
         :preserve
-          $ bunzip2 -f image.sdcard.bz2
+          $ bunzip2 -f &lt;image&gt;.sdcard.bz2
 %p
   3. Flash the image to the SD Card:
   %ul
@@ -78,19 +83,26 @@
       %pre
       %code
         :preserve
-          $ dd if=image.sdcard of=/dev/sdX bs=1M status=progress && sync
+          $ dd if=image.sdcard of=/dev/sd&lt;x&gt; bs=1M status=progress && sync
 
 %p
-  4. Retrieve the RB&trade; model in the Training section:
+  4. Retrieve the latest RB&trade; model:
+  %ul
+    %strong
+      %a(href="models/2019_07_17_14_37_26_100_hwd-model.rb") 2019_07_17_14_37_26_100_hwd-model.rb
+  
   %ul
     %p
       %pre
       %code
         :preserve
-          # wget model.rb
+          # wget &lt;model&gt;.rb
     %ul
+%p
+  5. Execute the application using the model as an argument:
+  %ul  
     %p
       %pre
       %code
         :preserve
-          # handWrittenDigitInput model.rb
+          # handWrittenDigitInput &lt;model&gt;.rb
