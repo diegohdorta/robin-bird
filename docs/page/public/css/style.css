@@ -19,6 +19,14 @@ body { width: 800px; margin: auto; background: #ffffff;}
   text-decoration: none;
 }
 
+#content image-size
+{
+
+width: 200px;
+height: 200px;
+}
+
+
 #content code {
 font-size: 12.5px;
     background-color: #c6ecd9;
