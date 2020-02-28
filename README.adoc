@@ -1,0 +1,23 @@
+= The Robin Bird Library
+
+image:https://img.shields.io/badge/license-MIT-blue.svg[MIT License, link=#copyright]
+
+== RB&#8482;
+
+_Robin Bird_ is a small _Machine Learning_ library, fully experimental, written in
+_C++_ for learning purpose only. This library provides simple implementations of
+_Machine Learning_ algorithms for solving real world problems on embedded systems.
+
+These algorithms are released as simple command-line programs and classes which
+can be used and integrated into low to medium-scale _Machine Learning_ solutions.
+
+== Maintainers
+
+* Diego Dorta <diego.dorta@nxp.com>
+* Marco Franchi <marco.franchi@nxp.com>
+
+== Copyright and License
+
+Copyright © 2019-2020 Diego Dorta, Marco Franchi.
+Free use of this software is granted under the terms of the MIT License.
+See https://github.com/diegohdorta/robin-bird/blob/master/LICENSE.adoc[LICENSE] for details.
