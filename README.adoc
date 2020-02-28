@@ -11,11 +11,17 @@ _Machine Learning_ algorithms for solving real world problems on embedded system
 These algorithms are released as simple command-line programs and classes which
 can be used and integrated into low to medium-scale _Machine Learning_ solutions.
 
-== RB&#8482; Real Time Inference
+=== RB&#8482; Real Time Inference
 
 . Touch screen real time inference:
-+ 
-image::https://raw.githubusercontent.com/diegohdorta/robin-bird/master/docs/page/public/media/touch.jpg[Robin Bird Inference,align="center"]
++
+image::https://raw.githubusercontent.com/diegohdorta/robin-bird/master/docs/page/public/media/touch.jpg[Robin Bird Inference,align=center]
+
+=== RB&#8482; Real Time Inference
+
+. See real time inference on `YouTube`:
++
+video::idY89707yFI[youtube,width=640,height=480,align=center]
 
 == Maintainers
 
