@@ -13,8 +13,8 @@ can be used and integrated into low to medium-scale _Machine Learning_ solutions
 
 == Maintainers
 
-* Diego Dorta <diego.dorta@nxp.com>
-* Marco Franchi <marco.franchi@nxp.com>
+* Diego Dorta
+* Marco Franchi
 
 == Copyright and License
 
