@@ -1,7 +1,6 @@
-/* Copyright 2019 NXP Semiconductors
- *   
+/* Copyright 2019-2020 Diego Dorta, Marco Franchi
+ *
  * SPDX-License-Identifier: MIT
- * Marco Franchi <marco.franchi@nxp.com>
  */
 #ifndef RESULTS_H
 #define RESULTS_H
